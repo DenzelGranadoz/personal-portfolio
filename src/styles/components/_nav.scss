@@ -1,0 +1,35 @@
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem 6rem;
+
+  h2 {
+    flex: 1 1 0;
+    text-align: center;
+    font-size: 1.75rem;
+    color: white;
+  }
+
+  ul {
+    flex: 3 1 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8rem;
+    list-style: none;
+
+    li {
+      text-decoration: none;
+      font-size: 1.75rem;
+      font-weight: 200;
+      color: white;
+
+    }
+
+    li:hover {
+      cursor: pointer;
+    }
+  }
+
+}
