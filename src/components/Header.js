@@ -1,10 +1,17 @@
 import React from 'react';
+import '../styles/components/_nav.scss';
 
 const Header = () => {
   return (
-    <div>
-      <h1>from Header</h1>
-    </div>
+    <nav>
+      <h2>Denzel</h2>
+      <ul>
+        <li>Home</li>
+        <li>About Me</li>
+        <li>Projects</li>
+        <li>Contact</li>
+      </ul>
+    </nav>
   );
 };
 

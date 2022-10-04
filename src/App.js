@@ -1,12 +1,15 @@
-import React from 'react'
-import './App.css'
+import React from 'react';
+import Main from './components/Main';
+import Footer from './components/Footer';
+import './App.scss';
 
 function App() {
   return (
-    <div>
-      <p>Clean React App</p>
+    <div className="main-container">
+      <Main />
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
