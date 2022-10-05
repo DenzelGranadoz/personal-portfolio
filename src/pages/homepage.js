@@ -3,7 +3,6 @@ import downloadLogo from '../assets/download.svg';
 import linkedin from '../assets/linkedin.svg';
 import github from '../assets/github.svg';
 import facebook from '../assets/facebook.svg';
-import mainBackground from '../assets/homepage-bg.jpg';
 import MovingText from 'react-moving-text';
 import '../styles/components/_homepage.scss';
 
