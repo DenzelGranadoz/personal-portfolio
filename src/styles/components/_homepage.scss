@@ -1,4 +1,4 @@
-@use 'abstract/colors';
+@use '../abstract';
 
 
 .homepage-about-me {
@@ -9,7 +9,7 @@
 
   h3 {
     position: absolute;
-    color: white;
+    color: abstract.$white-color;
     font-size: 25px;
     font-weight: 200;
     padding: 1.5rem;
@@ -23,7 +23,8 @@
   flex: 2 1 0;
   display: flex;
   flex-direction: column;
-  color: white;
+  color: abstract.$white-color;
+
 
   .homepage-intro-text {
     flex: 1 1 0;
@@ -46,8 +47,7 @@
     }
 
     .main-color-text {
-      // color: colors.$main-color;
-      color: #00ADB5;
+      color: abstract.$main-color;
     }
   }
 
@@ -58,8 +58,7 @@
     width: 12rem;
     height: 5px;
     bottom: -35px;
-    // background: colors.$main-color;
-    background: #00ADB5;
+    background: abstract.$main-color;
   }
 }
 
@@ -86,21 +85,21 @@
       text-align: center;
       border-radius: 10px;
       border: none;
-      // background-color: colors.$secondary-color;
-      // color: colors.$white-color;
-      background-color: #1D222A;
-      color: white;
+      background-color: abstract.$secondary-color;
+      color: abstract.$white-color;
+      transition: transform 0.5s ease-in;
     }
 
     button:hover {
+      font-weight: 900;
       cursor: pointer;
+      transform: scale(1.1);
     }
   }
 }
 
 .homepage-socials {
   flex: 1 1 0;
-  background-color: colors;
   display: flex;
   justify-content: flex-end;
 
@@ -126,16 +125,19 @@
         width: 5px;
         height: 12rem;
         bottom: 15px;
-        // background: colors.$main-color;
+        background: abstract.$main-color;
         left: 50%;
         transform: translate(-50%);
-        background: #00ADB5;
       }
     
       img {
         flex: 1 1 0;
         width: 40px;
         height: 40px;
+      }
+
+      img:hover {
+        cursor: pointer;
       }
     }
   }
