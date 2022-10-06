@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/components/_about.scss';
-import picture from '../assets/about.jpeg';
+import picture from '../assets/images/about.jpeg';
 
 const About = () => {
   return (
@@ -12,11 +12,12 @@ const About = () => {
         </div>
         <div className="about-text-container">
           <p>
-            Hi! My name is <span className="main-color-text">Denzel</span> and
-            my interest in web development only grew in the recent years
-            courtesy of the pandemic. I started out tinkering with HTML and CSS
-            and have enjoyed working on javascript projects in my free time. I'm
-            now a self-taught
+            <span className="main-color-text">Hi!</span> My name is{' '}
+            <span className="main-color-text">Denzel</span> and my interest in
+            web development only grew in the recent years courtesy of the
+            pandemic. I started out tinkering with HTML and CSS and have enjoyed
+            working on javascript projects in my free time. I'm now a
+            self-taught
             <span className="main-color-text"> Front-end developer </span>
             with a
             <span className="main-color-text"> Computer Science Degree </span>

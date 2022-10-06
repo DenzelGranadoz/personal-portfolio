@@ -1,8 +1,8 @@
 import React from 'react';
-import downloadLogo from '../assets/download.svg';
-import linkedin from '../assets/linkedin.svg';
-import github from '../assets/github.svg';
-import facebook from '../assets/facebook.svg';
+import downloadLogo from '../assets/logos/download.svg';
+import linkedin from '../assets/logos/linkedin.svg';
+import github from '../assets/logos/github.svg';
+import facebook from '../assets/logos/facebook.svg';
 import MovingText from 'react-moving-text';
 import '../styles/components/_homepage.scss';
 

@@ -1,12 +1,14 @@
+@use 'abstract';
+
 .main-container {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url('../assets/homepage-bg.jpg');
+  background-image: url('../assets/images/homepage-bg.jpg');
   background-repeat: no-repeat;
   background-size: contain;
-  background-color: #0a192f;
+  background-color: abstract.$secondary-color;
 }
 
 .content {
