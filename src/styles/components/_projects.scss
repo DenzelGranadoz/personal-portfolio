@@ -1,0 +1,158 @@
+@use '../abstract';
+
+.projects-page {
+  min-height: 200vh;
+  position: relative; 
+
+  h1,h2 {
+    color: abstract.$white-color;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 3rem;
+    padding: 5rem;
+  }
+
+  h1 {
+    opacity: 0.15;
+    font-size: 6rem;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 40px;
+  }
+
+  
+    .project {
+      flex: 1 1 0;
+      display: flex;
+      padding: 4rem 0;
+
+      .project-image-div {
+        flex: 1 1 0;
+        position: relative;
+        left: 110px;
+
+        img {
+          height: 450px;
+          width: 750px;
+          opacity: 0.3;
+          transition: opacity 0.25s ease-in-out;
+        }
+
+        img:hover {
+          opacity: 0.8;
+        }
+      }
+
+      .project-information-div {
+        flex: 1 1 0;
+        color: abstract.$white-color;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        position: relative;
+        padding: 2.5rem 0;
+        position: relative;
+        align-items: flex-end;
+        right: 110px;
+
+        h3 {
+          font-weight: 400;
+          font-size: 2rem;
+        }
+
+        .information {
+          height: 12rem;
+          width: 675px;
+          background-color: abstract.$third-color;
+          display: flex;
+          align-items: center;
+          text-align: center;
+          
+          p {
+            font-weight: 200;
+            font-size: 1.5rem;
+            padding: 0 1.25rem;
+            span {
+              color: abstract.$main-color;
+            }
+          }
+        }
+
+        .tech-stack-div {
+          width: 100%;
+
+          .tech-stack-list {
+            display: flex;
+            justify-content: flex-end;
+
+            li {  
+              list-style: none;
+              font-weight: lighter;
+              font-size: 1.25rem;
+              padding-left: 1.25rem;
+            }
+          }
+        }
+        
+        .project-logo-div {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          display: flex;
+          right: 0;
+          justify-content: flex-end;
+
+          img {
+            padding-left: 3rem;
+            transition: transform 0.25s ease-in-out;
+          }
+
+          img:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    // even numbered featured list items
+    .projects-container {
+      display: flex;
+      flex-direction: column;
+  
+      .project:nth-child(2n) {
+        .project-image-div {
+            left: 675px;
+        }
+        .project-information-div {
+          right: 655px;
+          align-items: flex-start;
+  
+          .tech-stack-div {
+            ul {
+              justify-content: flex-start;
+  
+              li {
+                padding-right: 1.25rem;
+                padding-left: 0;
+              }
+            }
+          }
+        }
+  
+        .project-logo-div {
+          left: 0;
+          justify-content: flex-start;
+  
+          img {
+            padding-right: 3rem;
+            padding-left: 0;
+          }
+        }
+      }
+  }
+}

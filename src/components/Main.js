@@ -1,8 +1,9 @@
 import React from 'react';
-import Homepage from '../pages/homepage';
+import Homepage from '../pages/Homepage';
 import '../styles/_main.scss';
 import Header from './Header';
-import About from '../pages/about';
+import About from '../pages/About';
+import Projects from '../pages/Project';
 
 const Main = () => {
   return (
@@ -12,6 +13,7 @@ const Main = () => {
         <Homepage />
       </div>
       <About />
+      <Projects />
     </div>
   );
 };
