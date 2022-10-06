@@ -58,7 +58,7 @@ const allProjects = [
   {
     name: 'Google-Homepage',
     description: 'A copy of the Google.com search page',
-    stack: '<li>JavaScript</li><li>CSS</li>',
+    stack: '<li>CSS</li><li>HTML</li>',
   },
 ];
 

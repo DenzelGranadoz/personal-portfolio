@@ -1,0 +1,99 @@
+@use '../abstract';
+
+.footer-page {
+  height: 60vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  color: abstract.$white-color;
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    h1 {
+      font-size: 6rem;
+      text-align: center;
+      font-weight: 200;
+    }
+
+    p{
+      word-wrap: break-word;
+      width: 40%;
+      font-size: 1.75rem;
+      text-align: center;
+      font-weight: lighter;
+    }
+
+    button {
+      font-size: 1.5rem;
+      font-weight: 200;
+      background-color: abstract.$third-color;
+      color: abstract.$white-color;
+      border: 1px solid abstract.$main-color;
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      transition: transform 0.5s ease-in;
+      margin: 2rem 0;
+    }
+  
+    button:hover {
+      transform: scale(1.2);
+      cursor: pointer;
+      background-color: abstract.$main-color;
+      color: abstract.$secondary-color;
+    }
+  }
+
+  .back-to-top {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 1.5rem 5rem;
+    background-color: transparent;
+    border: none;
+    color: white;
+    z-index: 1;
+
+    img{ 
+      height: 50px;
+      width: 50px;
+    }
+  }
+
+  @keyframes bounce {
+    20%,50%,80%, to{
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-30px);
+    }
+    70% {
+      transform: translateY(-15px);
+    }
+    90% {
+      transform: translateY(-4px);
+    }
+  }
+  .back-to-top:hover {
+    cursor: pointer;
+    color: abstract.$secondary-color;
+    animation: bounce 1s linear;
+
+  }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 2rem 5rem;
+    font-size: 1.5rem;
+    font-weight: 200;
+    color: abstract.$dirty-white;
+  }
+}

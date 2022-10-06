@@ -4,6 +4,7 @@ import '../styles/_main.scss';
 import Header from './Header';
 import About from '../pages/About';
 import Projects from '../pages/Project';
+import Contact from '../pages/Contact';
 
 const Main = () => {
   return (
@@ -14,6 +15,7 @@ const Main = () => {
       </div>
       <About />
       <Projects />
+      <Contact />
     </div>
   );
 };
