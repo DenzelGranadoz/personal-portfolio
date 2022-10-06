@@ -25,7 +25,7 @@ const Projects = () => {
       </ul>
       <div className="more-projects">
         {!projects && (
-          <button onClick={handleMoreProjects}>More Projects</button>
+          <button onClick={handleMoreProjects}>View More Projects</button>
         )}
         <div className="more-projects-container">
           {projects &&
