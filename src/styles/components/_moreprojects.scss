@@ -1,0 +1,106 @@
+@use '../abstract';
+
+.more-projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5rem;
+  
+  button {
+    font-size: 1.5rem;
+    font-weight: 200;
+    background-color: abstract.$third-color;
+    color: abstract.$white-color;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.5s ease-in;
+  }
+
+  button:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+    color: abstract.$main-color;
+  }
+
+  .more-projects-container {
+    width: 85%;
+    display: grid;
+    grid: auto-flow auto/ repeat(auto-fit, minmax(300px, 1fr)) ;
+    gap: 2.5rem;
+    margin: 4rem 0;
+    
+    .project-extra {
+      padding: 1.5rem;
+      display: grid;
+      grid-template-areas:
+      "name name logo"
+      "description description description"
+      "stack stack stack " ;
+      color: abstract.$white-color;
+      background-color: abstract.$third-color;
+    }
+
+    .project-extra-title {
+      grid-area: name;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      
+      h3 {
+        font-weight: 400;
+        padding: 0.5rem;
+        font-size: 1.75rem;
+        line-height: 1.25;
+      }
+    }    
+    .project-extra-logo {
+      grid-area: logo;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    
+      img {
+        width: 40px;
+        height: 40px;
+        padding-left: 1rem;
+        transition: transform 0.25s ease-in-out;
+      }
+
+      img:hover {
+        transform: scale(1.3);
+        cursor: pointer;
+      }
+    }    
+    
+    .project-extra-description {
+      grid-area: description;
+      padding: 1.5rem 0;
+
+      p {
+        font-weight: 200;
+        font-size: 1.2rem;
+        color: abstract.$dirty-white;
+        padding: 0.5rem 0;
+      }
+    }
+
+    .project-extra-stack {
+      grid-area: stack;
+
+      ul {
+        display: flex;
+
+        li {  
+          list-style: none;
+          font-weight: lighter;
+          font-size: 1.1rem;
+          padding-right: 1.25rem;
+        }
+      }
+    }
+  }
+}
