@@ -121,12 +121,11 @@
       }
     }
 
-    // even numbered featured list items
     .projects-container {
       display: flex;
       flex-direction: column;
   
-      .project:nth-child(2n) {
+      .project:nth-child(even) {
         .project-image-div {
             left: 675px;
         }
