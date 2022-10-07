@@ -67,7 +67,7 @@ function Download() {
       width="25"
       height="20"
       fill="currentColor"
-      className="bi svg-download"
+      class="bi svg-download"
       viewBox="0 0 16 16"
     >
       <path d="M.5 9.9a.5.5 0 01.5.5v2.5a1 1 0 001 1h12a1 1 0 001-1v-2.5a.5.5 0 011 0v2.5a2 2 0 01-2 2H2a2 2 0 01-2-2v-2.5a.5.5 0 01.5-.5z"></path>
@@ -76,4 +76,24 @@ function Download() {
   );
 }
 
-export { LinkedIn, Facebook, Github, Download };
+function Github2() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="45" height="45" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round" className='svg-featured'>
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+    <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+    </svg>  
+  )
+}
+
+function ExternalLink() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-external-link" width="45" height="45" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round" className='svg-featured'>
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+    <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5" />
+    <line x1="10" y1="14" x2="20" y2="4" />
+    <polyline points="15 4 20 4 20 9" />
+  </svg>
+  )
+}
+
+export { LinkedIn, Facebook, Github, Download, Github2, ExternalLink };

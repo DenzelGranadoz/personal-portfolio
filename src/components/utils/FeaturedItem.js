@@ -1,10 +1,9 @@
 import React from 'react';
-import github from '../../assets/logos/project-github.svg';
-import link from '../../assets/logos/project-link.svg';
+import { Github2, ExternalLink } from '../utils/svg/icons';
 import Parser from 'html-react-parser';
 
 const FeaturedItem = ({ project }) => {
-  const { name, image } = project;
+  const { name, image, github, demo } = project;
   const description = project.description;
   const stack = project.stack;
 
@@ -26,8 +25,13 @@ const FeaturedItem = ({ project }) => {
         </div>
 
         <div className="project-logo-div">
-          <img src={github} alt="github-logo"></img>
-          <img src={link} alt="link-logo"></img>
+          <a href={github} rel="noreferrer" target="_blank">
+            <Github2 />
+          </a>
+
+          <a href={demo} rel="noreferrer" target="_blank">
+            <ExternalLink />
+          </a>
         </div>
       </div>
     </li>

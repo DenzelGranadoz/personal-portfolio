@@ -105,14 +105,17 @@
           right: 0;
           justify-content: flex-end;
 
-          img {
-            padding-left: 3rem;
-            transition: transform 0.25s ease-in-out;
+          .svg-featured {
+            stroke: abstract.$white-color;
+            margin-left: 2rem;
+            transition: stroke 0.5s ease-in-out,
+                        transform 0.5s ease-in-out;
           }
 
-          img:hover {
-            transform: scale(1.1);
+          .svg-featured:hover {
+            transform: scale(1.3);
             cursor: pointer;
+            stroke: abstract.$main-color;
           }
         }
       }
@@ -146,10 +149,10 @@
         .project-logo-div {
           left: 0;
           justify-content: flex-start;
-  
-          img {
-            padding-right: 3rem;
-            padding-left: 0;
+
+          .svg-featured {
+            margin-right: 2rem;
+            margin-left: 0;
           }
         }
       }
