@@ -17,7 +17,13 @@ const Contact = () => {
           If you have an opportunity to share, or would like to discuss
           anything, you can leave your details by clicking the button below.
         </p>
-        <button>Say Hello</button>
+        <a
+          href="mailto:zelgranadoz@gmail.com?subject=Important!"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button>Say Hello</button>
+        </a>
       </div>
       <button className="back-to-top" onClick={handleScroll}>
         <img src={arrow} alt="back to top"></img>
