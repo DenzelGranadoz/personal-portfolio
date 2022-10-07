@@ -4,10 +4,9 @@ import arrow from '../assets/logos/arrow-to-top.svg';
 
 const Contact = () => {
   return (
-    <div className="footer-page">
+    <section className="footer-page" id="contactPage">
       <div className="footer-content">
         <h1>Get In Touch</h1>
-
         <p>
           If you have an opportunity to share, or would like to discuss
           anything, you can leave your details by clicking the button below.
@@ -18,7 +17,7 @@ const Contact = () => {
         <img src={arrow} alt="back to top"></img>
       </button>
       <footer>© Copyright 2022, Denzel Granadoz</footer>
-    </div>
+    </section>
   );
 };
 
