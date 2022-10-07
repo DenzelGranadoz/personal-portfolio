@@ -2,7 +2,14 @@ import React from 'react';
 import '../styles/components/_contact.scss';
 import arrow from '../assets/logos/arrow-to-top.svg';
 
+import * as Scroll from 'react-scroll';
+
 const Contact = () => {
+  const handleScroll = () => {
+    let scroll = Scroll.animateScroll;
+    scroll.scrollToTop();
+  };
+
   return (
     <section className="footer-page" id="contactPage">
       <div className="footer-content">
@@ -13,7 +20,7 @@ const Contact = () => {
         </p>
         <button>Say Hello</button>
       </div>
-      <button className="back-to-top">
+      <button className="back-to-top" onClick={handleScroll}>
         <img src={arrow} alt="back to top"></img>
       </button>
       <footer>© Copyright 2022, Denzel Granadoz</footer>
