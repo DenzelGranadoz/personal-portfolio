@@ -1,7 +1,6 @@
 import React from 'react';
 import '../styles/components/_contact.scss';
 import arrow from '../assets/logos/arrow-to-top.svg';
-
 import * as Scroll from 'react-scroll';
 
 const Contact = () => {

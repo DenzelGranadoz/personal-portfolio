@@ -8,8 +8,14 @@ import {
   Download,
 } from '../components/utils/svg/icons';
 import resume from '../assets/resume/Granadoz_Resume.pdf';
+import * as Scroll from 'react-scroll';
 
 const Homepage = () => {
+  const handleScroll = () => {
+    let scroll = Scroll.animateScroll;
+    scroll.scrollToBottom();
+  };
+
   return (
     <section className="homepage-about-me">
       <div className="homepage-intro-button-wrapper">
@@ -30,8 +36,8 @@ const Homepage = () => {
                 RESUME <Download />
               </button>
             </a>
-            <a className="" href="">
-              <button>CONTACT ME</button>
+            <a>
+              <button onClick={handleScroll}>CONTACT ME</button>
             </a>
           </div>
         </div>
