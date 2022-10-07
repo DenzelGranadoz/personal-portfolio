@@ -37,17 +37,29 @@ const Homepage = () => {
           <ul className="inner-container">
             <li className="horizontal-line"></li>
             <li>
-              <a href="" rel="noreferrer" target="_blank">
+              <a
+                href="https://www.linkedin.com/in/denzelgranadoz"
+                rel="noreferrer"
+                target="_blank"
+              >
                 <LinkedIn />
               </a>
             </li>
             <li>
-              <a href="" rel="noreferrer" target="_blank">
+              <a
+                href="https://github.com/DenzelGranadoz"
+                rel="noreferrer"
+                target="_blank"
+              >
                 <Github />
               </a>
             </li>
             <li>
-              <a href="" rel="noreferrer" target="_blank">
+              <a
+                href="https://www.facebook.com/denzzgranadoz/"
+                rel="noreferrer"
+                target="_blank"
+              >
                 <Facebook />
               </a>
             </li>
