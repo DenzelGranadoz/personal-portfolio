@@ -1,7 +1,7 @@
 import React from 'react';
 import Homepage from '../pages/Homepage';
 import '../styles/_main.scss';
-import Header from './Header';
+import Header from './utils/Header';
 import About from '../pages/About';
 import Projects from '../pages/Project';
 import Contact from '../pages/Contact';

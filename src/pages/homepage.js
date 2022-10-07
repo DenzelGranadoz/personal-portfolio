@@ -1,10 +1,12 @@
 import React from 'react';
-import downloadLogo from '../assets/logos/download.svg';
-import linkedin from '../assets/logos/linkedin.svg';
-import github from '../assets/logos/github.svg';
-import facebook from '../assets/logos/facebook.svg';
 import MovingText from 'react-moving-text';
 import '../styles/components/_homepage.scss';
+import {
+  LinkedIn,
+  Github,
+  Facebook,
+  Download,
+} from '../components/utils/svg/icons';
 
 const Homepage = () => {
   return (
@@ -23,7 +25,7 @@ const Homepage = () => {
           <p>Front-End Web Developer</p>
           <div className="buttons-wrap">
             <button>
-              DOWNLOAD CV <img src={downloadLogo} alt="download-logo"></img>
+              RESUME <Download />
             </button>
             <button>CONTACT ME</button>
           </div>
@@ -32,14 +34,27 @@ const Homepage = () => {
 
       <div className="homepage-socials">
         <div className="socials-container">
-          <div className="inner-container">
-            <div className="horizontal-line"></div>
-            <img src={linkedin} alt="linkedin-logo"></img>
-            <img src={github} alt="github-logo"></img>
-            <img src={facebook} alt="facebook-logo"></img>
-          </div>
+          <ul className="inner-container">
+            <li className="horizontal-line"></li>
+            <li>
+              <a href="" rel="noreferrer" target="_blank">
+                <LinkedIn />
+              </a>
+            </li>
+            <li>
+              <a href="" rel="noreferrer" target="_blank">
+                <Github />
+              </a>
+            </li>
+            <li>
+              <a href="" rel="noreferrer" target="_blank">
+                <Facebook />
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
+
       <h3>
         <MovingText
           type="slideOutToBottom"

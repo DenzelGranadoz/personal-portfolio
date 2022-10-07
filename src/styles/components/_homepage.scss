@@ -78,20 +78,32 @@
     margin: 1.5rem 0;
 
     button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 1rem;
       padding: 0.75rem 1.5rem;
       min-width: 14rem;
-      align-items: center;
       text-align: center;
       border-radius: 10px;
       border: none;
       background-color: abstract.$secondary-color;
       color: abstract.$white-color;
       transition: transform 0.5s ease-in;
+
+      .svg-download {
+        margin-left: 0.25rem ;
+
+      }
+
+      .svg-download:hover {
+        font-weight: 900;
+        fill: abstract.$main-color;
+      }
     }
 
     button:hover {
-      font-weight: 900;
+      color: abstract.$main-color;
       cursor: pointer;
       transform: scale(1.1);
     }
@@ -112,7 +124,9 @@
     .inner-container {
       display: flex;
       flex-direction: column;
+      justify-content: space-around;
       height: 30%;
+      list-style: none;
 
       .horizontal-line {
         position: relative;
@@ -123,21 +137,39 @@
         display: block;
         position: absolute;
         width: 5px;
-        height: 12rem;
+        height: 13rem;
         bottom: 15px;
         background: abstract.$main-color;
         left: 50%;
         transform: translate(-50%);
       }
     
-      img {
-        flex: 1 1 0;
-        width: 40px;
-        height: 40px;
-      }
+      li {
+        a {
+          .svg-socials {
+            fill: white;
+            transition: fill 0.5s ease-in-out;
+        }
+      }}
 
-      img:hover {
+      li:nth-child(n+2):hover {
         cursor: pointer;
+        animation: up 0.5s linear forwards;
+        
+        a {
+          .svg-socials {
+            fill: abstract.$main-color;
+        }
+      }
+      }
+      
+      @keyframes up {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(-5px);
+        }
       }
     }
   }
