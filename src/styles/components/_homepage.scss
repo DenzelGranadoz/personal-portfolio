@@ -77,6 +77,10 @@
     width: 48%;
     margin: 1.5rem 0;
 
+    a {
+    color: abstract.$white-color;
+    text-decoration: none;
+ 
     button {
       display: flex;
       align-items: center;
@@ -92,20 +96,19 @@
       transition: transform 0.5s ease-in;
 
       .svg-download {
-        margin-left: 0.25rem ;
-
-      }
-
-      .svg-download:hover {
-        font-weight: 900;
-        fill: abstract.$main-color;
+        margin-left: 0.25rem;
       }
     }
+  }
 
     button:hover {
       color: abstract.$main-color;
       cursor: pointer;
       transform: scale(1.1);
+
+      .svg-download {
+        fill: abstract.$main-color;
+      }
     }
   }
 }

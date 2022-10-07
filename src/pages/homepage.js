@@ -7,6 +7,7 @@ import {
   Facebook,
   Download,
 } from '../components/utils/svg/icons';
+import resume from '../assets/resume/Granadoz_Resume.pdf';
 
 const Homepage = () => {
   return (
@@ -24,10 +25,14 @@ const Homepage = () => {
           <div className="horizontal-line"></div>
           <p>Front-End Web Developer</p>
           <div className="buttons-wrap">
-            <button>
-              RESUME <Download />
-            </button>
-            <button>CONTACT ME</button>
+            <a className="" href={resume} download="Granadoz_Resume.pdf">
+              <button>
+                RESUME <Download />
+              </button>
+            </a>
+            <a className="" href="">
+              <button>CONTACT ME</button>
+            </a>
           </div>
         </div>
       </div>
