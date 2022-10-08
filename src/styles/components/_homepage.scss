@@ -59,6 +59,21 @@
     height: 5px;
     bottom: -35px;
     background: abstract.$main-color;
+    animation: pseudo-animation 1.1s linear;
+  }
+
+  @keyframes pseudo-animation {
+    0% {
+      opacity: 0;
+      left: -100px;
+    }
+    50% {
+      opacity: 0.2;
+    }
+    100% {
+      opacity: 1;
+      left: 0px;
+    }
   }
 }
 
@@ -145,6 +160,21 @@
         background: abstract.$main-color;
         left: 50%;
         transform: translate(-50%);
+        animation: pseudo-animation 1.25s linear;
+      }
+    
+      @keyframes pseudo-animation {
+        0% {
+          opacity: 0;
+          left: 150px;
+        }
+        50% {
+          opacity: 0.2;
+        }
+        100% {
+          opacity: 1;
+          left: 20px;
+        }
       }
     
       li {

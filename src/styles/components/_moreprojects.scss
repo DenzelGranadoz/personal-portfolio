@@ -16,6 +16,7 @@
     border: 1px solid abstract.$main-color;
     border-radius: 10px;
     transition: transform 0.5s ease-in;
+    animation: btn-animation 3s linear;
     margin: 3rem 0;
   }
 
@@ -26,12 +27,20 @@
     color: abstract.$secondary-color;
   }
 
+  @keyframes btn-animation {
+    0% {
+      opacity: 0,
+    }
+    100% {
+      opacity: 1,
+    }
+  }
+
   .more-projects-container {
     width: 85%;
     display: grid;
     grid: auto-flow auto/ repeat(auto-fit, minmax(300px, 1fr)) ;
     gap: 2.5rem;
-    // margin-top: 2rem;
     
     .project-extra {
       padding: 1.5rem;

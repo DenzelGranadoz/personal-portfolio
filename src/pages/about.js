@@ -1,30 +1,105 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/components/_about.scss';
-import picture from '../assets/images/about.jpeg';
+import about from '../components/utils/AboutMe';
+import Parser from 'html-react-parser';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const About = () => {
+  const [aboutMe, setAboutMe] = useState(about);
+  const { description, image } = aboutMe;
+
+  const control = useAnimation();
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+  });
+
+  const pageTitleVariant = {
+    hidden: {
+      opacity: 0,
+      y: 100,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.9,
+      },
+    },
+  };
+
+  const contentVariant = {
+    hidden: {
+      opacity: 0,
+      y: 250,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1.5,
+      },
+    },
+  };
+
+  const backgroundVariant = {
+    hidden: {
+      opacity: 0,
+      x: 300,
+    },
+    visible: {
+      opacity: 0.15,
+      x: 0,
+      transition: {
+        delay: 0.75,
+        duration: 1.75,
+      },
+    },
+  };
+
+  useEffect(() => {
+    inView ? control.start('visible') : control.start('hidden');
+  }, [control, inView]);
+
   return (
     <section className="about-container" id="aboutPage">
-      <h2>About me</h2>
+      <motion.h2
+        ref={ref}
+        variants={pageTitleVariant}
+        initial="hidden"
+        animate={control}
+      >
+        About me
+      </motion.h2>
       <div className="about-content">
         <div className="image-text-container">
-          <img src={picture} alt="my-picture"></img>
+          <motion.img
+            src={image}
+            alt="my pic"
+            ref={ref}
+            variants={contentVariant}
+            animate={control}
+            initial="hiddenImage"
+          ></motion.img>
         </div>
         <div className="about-text-container">
-          <p>
-            <span className="main-color-text">Hi!</span> My name is{' '}
-            <span className="main-color-text">Denzel</span> and my interest in
-            web development only grew in the recent years courtesy of the
-            pandemic. I started out tinkering with HTML and CSS and have enjoyed
-            working on javascript projects in my free time. I'm now a
-            self-taught
-            <span className="main-color-text"> Front-end developer </span>
-            with a
-            <span className="main-color-text"> Computer Science Degree </span>
-            from De La Salle University - Dasmarinas, Philippines.
-          </p>
+          <motion.p
+            ref={ref}
+            variants={contentVariant}
+            animate={control}
+            initial="hiddenText"
+          >
+            {Parser(description)}
+          </motion.p>
         </div>
-        <h1>About me</h1>
+        <motion.h1
+          ref={ref}
+          variants={backgroundVariant}
+          animate={control}
+          initial="hidden"
+        >
+          About me
+        </motion.h1>
       </div>
     </section>
   );

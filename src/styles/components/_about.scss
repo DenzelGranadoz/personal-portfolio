@@ -46,6 +46,9 @@
       font-weight: 200;
       padding: 0 2rem;
     }
+    span {
+     color: abstract.$main-color;
+    }
   }
 
   h1 {
@@ -55,11 +58,6 @@
     font-size: 240px;
     opacity: 0.15;
   }
-
-}
-
-.main-color-text {
-  color: abstract.$main-color;
 }
 
 .background-about-text {

@@ -1,14 +1,20 @@
 import React from 'react';
 import '../../styles/components/_nav.scss';
 import { Link } from 'react-scroll';
+import { motion } from 'framer-motion';
 
 const Header = () => {
   const handleReset = () => {
     window.location.reload();
   };
 
+  const navVariant = {
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+    hidden: { opacity: 0, y: -75 },
+  };
+
   return (
-    <nav>
+    <motion.nav variants={navVariant} animate="visible" initial="hidden">
       <ul>
         <li>
           <h2 onClick={handleReset}>Denzel</h2>
@@ -42,7 +48,7 @@ const Header = () => {
           <li>Contact</li>
         </Link>
       </ul>
-    </nav>
+    </motion.nav>
   );
 };
 
