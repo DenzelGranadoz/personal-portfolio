@@ -1,0 +1,9 @@
+@use '../abstract/breakpoints' as *;
+
+@mixin min-device($device: map-get($devices)) {
+  @if map-has-key($devices, $device) {
+    @media screen and (min-width: map-get($devices, $device)) {
+        @content;
+    }
+  }
+}
