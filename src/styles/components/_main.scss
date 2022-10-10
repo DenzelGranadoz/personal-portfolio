@@ -1,0 +1,23 @@
+@use 'abstract';
+
+.main-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('../assets/images/homepage-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: abstract.$secondary-color;
+}
+
+.content {
+  width: 80%;
+}
+
+.homepage-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
