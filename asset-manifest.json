@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/personal-portfolio/static/css/main.8fe8bc82.css",
+    "main.js": "/personal-portfolio/static/js/main.4eb5088f.js",
+    "static/media/homepage-bg-vertical.png": "/personal-portfolio/static/media/homepage-bg-vertical.4dfe4b819fa1d8fb792c.png",
+    "static/media/homepage-bg.jpg": "/personal-portfolio/static/media/homepage-bg.c2d10d0d6b5778794218.jpg",
+    "static/media/shopping-cart.png": "/personal-portfolio/static/media/shopping-cart.6f892567ceaecdbc17be.png",
+    "static/media/battleship.png": "/personal-portfolio/static/media/battleship.fd4e86f5fbd257914cff.png",
+    "static/media/weather-app.png": "/personal-portfolio/static/media/weather-app.ad6f32dd2df24425a416.png",
+    "static/media/about.jpeg": "/personal-portfolio/static/media/about.6db743fbbfa22cda79ba.jpeg",
+    "static/media/Granadoz_Resume.pdf": "/personal-portfolio/static/media/Granadoz_Resume.e343c96e43427da05171.pdf",
+    "index.html": "/personal-portfolio/index.html",
+    "static/media/arrow-to-top.svg": "/personal-portfolio/static/media/arrow-to-top.97b4d8a2636ec3bd89260073cf810963.svg",
+    "main.8fe8bc82.css.map": "/personal-portfolio/static/css/main.8fe8bc82.css.map",
+    "main.4eb5088f.js.map": "/personal-portfolio/static/js/main.4eb5088f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8fe8bc82.css",
+    "static/js/main.4eb5088f.js"
+  ]
+}
