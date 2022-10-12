@@ -51,19 +51,6 @@ const Projects = () => {
     },
   };
 
-  const buttonVariant = {
-    hidden: {
-      opacity: 0,
-    },
-    visible: {
-      opacity: 1,
-      transition: {
-        delay: 1,
-        duration: 1.5,
-      },
-    },
-  };
-
   return (
     <section className="projects-page" id="projectPage">
       <motion.h1
@@ -89,15 +76,7 @@ const Projects = () => {
       </ul>
       <div className="more-projects">
         {!projects && (
-          <motion.button
-            onClick={handleMoreProjects}
-            // ref={ref}
-            // animate={control}
-            // variants={buttonVariant}
-            // initial="hidden"
-          >
-            View More Projects
-          </motion.button>
+          <button onClick={handleMoreProjects}>View More Projects</button>
         )}
         <div className="more-projects-container">
           {projects &&
@@ -106,15 +85,7 @@ const Projects = () => {
             ))}
         </div>
         {projects && (
-          <motion.button
-            onClick={handleMoreProjects}
-            // ref={ref}
-            // variants={buttonVariant}
-            // animate={control}
-            // initial="hidden"
-          >
-            Hide Projects
-          </motion.button>
+          <button onClick={handleMoreProjects}>Hide Projects</button>
         )}
       </div>
     </section>

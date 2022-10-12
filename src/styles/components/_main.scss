@@ -1,14 +1,14 @@
-@use 'abstract';
+@use '../abstract' as *;
 
 .main-container {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url('../assets/images/homepage-bg.jpg');
+  background-image: url('../../assets/images/homepage-bg.jpg');
   background-repeat: no-repeat;
   background-size: contain;
-  background-color: abstract.$secondary-color;
+  background-color: $secondary-color;
 }
 
 .content {
@@ -20,4 +20,35 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+}
+
+@include between-devices('lg-laptop', 'desktop') {
+  .homepage-container {
+    height: 75vh;
+  }
+}
+
+@include between-devices('sm-laptop', 'lg-laptop') {
+  .homepage-container {
+    height: 70vh;
+  }
+}
+
+
+
+@include between-devices('sm-phone', 'sm-laptop') {
+  .main-container {
+    background-image: none;
+  }
+  .content {
+    width: 100%;
+  }
+  .homepage-container {
+    background-image: url('../../assets/images/homepage-bg-vertical.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: -webkit-fill-available;
+    height: 100vh;
+    width: 100%;
+  }
 }

@@ -1,4 +1,4 @@
-@use '../abstract';
+@use '../abstract/' as *;
 
 .footer-page {
   height: 60vh;
@@ -7,7 +7,7 @@
   flex-direction: column;
   align-items: flex-start;
   position: relative;
-  color: abstract.$white-color;
+  color: $white-color;
 
   .footer-content {
     display: flex;
@@ -32,9 +32,9 @@
     button {
       font-size: 1.5rem;
       font-weight: 200;
-      background-color: abstract.$third-color;
-      color: abstract.$white-color;
-      border: 1px solid abstract.$main-color;
+      background-color: $third-color;
+      color: $white-color;
+      border: 1px solid $main-color;
       padding: 0.75rem 1.5rem;
       border-radius: 10px;
       transition: transform 0.5s ease-in;
@@ -44,8 +44,8 @@
     button:hover {
       transform: scale(1.2);
       cursor: pointer;
-      background-color: abstract.$main-color;
-      color: abstract.$secondary-color;
+      background-color: $main-color;
+      color: $secondary-color;
     }
   }
 
@@ -82,7 +82,7 @@
   
   .back-to-top:hover {
     cursor: pointer;
-    color: abstract.$secondary-color;
+    color: $secondary-color;
     animation: bounce 1s linear;
 
   }
@@ -95,6 +95,117 @@
     padding: 2rem 5rem;
     font-size: 1.5rem;
     font-weight: 200;
-    color: abstract.$dirty-white;
+    color: $dirty-white;
+  }
+
+  @include between-devices('tablet', 'lg-laptop') {  
+    .footer-content {
+      h1 {
+        font-size: 5rem;
+      }
+  
+      p{
+        width: 50%; 
+        font-size: 1.5rem;
+      }
+  
+      button {
+        font-size: 1.25rem;
+      }
+    }
+  
+    .back-to-top {  
+      img{ 
+        height: 45px;
+        width: 45px;
+      }
+    }
+  
+    footer {
+      font-size: 1.25rem;
+    }
+  }
+
+  @include between-devices('lg-phone', 'tablet') {
+    height: 70vh;
+  
+    .footer-content {
+      h1 {
+        font-size: 5rem;
+      }
+  
+      p{
+        width: 45%;
+        font-size: 1.4rem;
+        padding: 1rem 0;
+      }
+  
+      button {
+        font-size: 1.25rem;
+        padding: 0.5rem 2rem;
+      }
+    }
+  
+    .back-to-top { 
+      img{ 
+        height: 40px;
+        width: 40px;
+      }
+    }
+    
+    footer {
+      font-size: 1.25rem;
+    }
+  }
+
+  @include between-devices('sm-phone', 'lg-phone') {
+    height: 90vh;
+
+    .footer-content {
+      h1 {
+        font-size: 6rem;
+      }
+  
+      p{
+        width: 50%;
+        font-size: 1.5rem;
+        padding: 2rem 0;
+      }
+    }
+  
+    footer {
+      font-size: 1.4rem;
+    }
+  }
+
+  @include max-device('tablet') {
+    footer {
+      .homepage-socials {
+        justify-content: center;    
+        .socials-container {      
+          .inner-container {
+            padding: 1rem 10rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            list-style: none;
+
+            li:first-child {
+              display: none;
+            }
+          
+            li {
+              a {
+                .svg-socials {
+                  fill: white;
+                  transition: fill 0.5s ease-in-out;
+                  width: 35px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

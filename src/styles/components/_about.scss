@@ -1,4 +1,4 @@
-@use '../abstract';
+@use '../abstract' as *;
 
 .about-container {
   height: 100vh;
@@ -6,62 +6,247 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  color: white;
+  justify-content: space-around;
+  color: $white-color;
   
   h2 {
     font-size: 3rem;
   }
-}
 
-.about-content {
-  position: relative;
-  display: flex;
-  width: 100%;
-  padding-bottom: 4rem;
-  height: 80vh;
-
-  .image-text-container {
-    flex: 1 1 0;
+  .about-content {
+    position: relative;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
+    padding-bottom: 4rem;
+    height: 80vh;
   
-    img {
-      height: 500px;
-      width: 500px;
-      border:4px solid #00ADB5;
-      border-radius: 10px;
+    .image-text-container {
+      flex: 1 1 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    
+      img {
+        height: 500px;
+        width: 500px;
+        border:4px solid #00ADB5;
+        border-radius: 10px;
+      }
+    }
+  
+    .about-text-container {
+      flex: 1.5 1 0;
+      display: flex;
+      align-items: center;
+  
+      p {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 200;
+        padding: 0 2rem;
+      }
+      span {
+       color: $main-color;
+      }
+    }
+  
+    h1 {
+      position: absolute;
+      bottom: 0;
+      left: -250px;
+      font-size: 240px;
+      opacity: 0.15;
     }
   }
 
-  .about-text-container {
-    flex: 1.5 1 0;
-    display: flex;
-    align-items: center;
+  @include between-devices('lg-laptop', 'desktop') {
+    h2 {
+      font-size: 2.75rem;
+    }
+  
+    .about-content {
+      height: 70vh;
 
-    p {
-      text-align: center;
-      font-size: 2rem;
-      font-weight: 200;
+      .image-text-container {
+        margin-left: 3rem;
+        img {
+          height: 450px;
+          width: 450px;
+        }
+      }
+    
+      .about-text-container {
+        p {
+          font-size: 1.75rem;
+          padding: 0 3rem;
+        }
+      }
+    
+      h1 {
+        left: -220px;
+        font-size: 210px;
+      }
+    }
+  }
+
+  @include between-devices('sm-laptop', 'lg-laptop') {
+    h2 {
+      font-size: 2.5rem;
+    }
+  
+    .about-content {
+      padding-bottom: 1rem;
+      height: 60vh;
+    
+      .image-text-container {
+        margin-left: 2rem;
+      
+        img {
+          height: 400px;
+          width: 400px;
+        }
+      }
+    
+      .about-text-container {
+        p {
+          font-size: 1.5rem;
+          padding: 0 2rem;
+        }
+      }
+    
+      h1 {
+        left: -200px;
+        font-size: 190px;
+      }
+    }
+  }
+
+  @include between-devices('tablet', 'sm-laptop') {
+    h2 {
+      font-size: 3.5rem;
+    }
+  
+    .about-content {
+      padding: 0 3rem;
+      padding-bottom: 6rem;
+      height: 70vh;
+    
+      .image-text-container {
+      
+        img {
+          height: 425px;
+          width: 425px;
+        }
+      }
+    
+      .about-text-container {    
+        p {
+          font-size: 1.75rem;
+        }
+      }
+    
+      h1 {
+        left: -75px;
+        font-size: 200px;
+      }
+    }
+  }
+
+  @include between-devices('lg-phone', 'tablet') {  
+    h2 {
+      margin-top: 6rem;
+      font-size: 3rem;
+    }
+
+    .about-content {
+      flex-direction: column-reverse;
       padding: 0 2rem;
-    }
-    span {
-     color: abstract.$main-color;
+      height: 100%;
+
+      .image-text-container {
+        img {
+          height: 350px;
+          width: 350px;
+        }
+      }
+    
+      .about-text-container {
+        p {
+          font-size: 1.25rem;
+          padding: 1rem;
+        }
+      }
+      
+      h1 {
+        top: 250px;
+        left: -75px;
+        font-size: 150px;
+      }
     }
   }
 
-  h1 {
-    position: absolute;
-    bottom: 0;
-    left: -250px;
-    font-size: 240px;
-    opacity: 0.15;
+  @include between-devices('md-phone', 'lg-phone') {
+    h2 {
+      margin-top: 6rem;
+      font-size: 4rem;
+    }
+
+    .about-content {
+      flex-direction: column-reverse;
+      height: 100%;
+    
+      .image-text-container {
+        img {
+          height: 350px;
+          width: 350px;
+        }
+      }
+    
+      .about-text-container {  
+        p {
+          font-size: 1.5rem;
+          padding: 2rem;
+        }
+      }
+    
+      h1 {
+        top: 200px;
+        left: -50px;
+        font-size: 150px;
+      }
+    }
+  }
+
+  @include between-devices('sm-phone', 'md-phone') {
+    h2 {
+      margin-top: 4rem;
+      font-size: 2.5rem;
+    }
+
+    .about-content {
+      flex-direction: column-reverse;
+      height: 100%;
+    
+      .image-text-container {
+        img {
+          height: 325px;
+          width: 325px;
+        }
+      }
+    
+      .about-text-container {  
+        p {
+          font-size: 1.5rem;
+          padding: 1.5rem;
+        }
+      }
+    
+      h1 {
+        top: 275px;
+        left: -40px;
+        font-size: 150px;
+      }
+    }
   }
 }
 
-.background-about-text {
-  position: absolute;
-  left: 0;
-  bottom: -1rem;
-}

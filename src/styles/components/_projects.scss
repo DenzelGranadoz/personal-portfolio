@@ -1,11 +1,11 @@
-@use '../abstract';
+@use '../abstract' as *;
 
 .projects-page {
   min-height: 200vh;
   position: relative; 
 
   h1,h2 {
-    color: abstract.$white-color;
+    color: $white-color;
     text-align: center;
   }
 
@@ -23,99 +23,255 @@
     top: 40px;
   }
 
-    .project {
+  .project {
+    flex: 1 1 0;
+    display: flex;
+    padding: 4rem 0;
+
+    .project-image-div {
       flex: 1 1 0;
+      position: relative;
+      left: 110px;
+
+      img {
+        height: 450px;
+        width: 750px;
+        opacity: 0.3;
+        transition: opacity 0.25s ease-in-out;
+      }
+
+      img:hover {
+        opacity: 0.8;
+      }
+    }
+
+    .project-information-div {
+      flex: 1 1 0;
+      color: $white-color;
+      z-index: 1;
       display: flex;
-      padding: 4rem 0;
+      flex-direction: column;
+      justify-content: space-evenly;
+      position: relative;
+      padding: 2.5rem 0;
+      position: relative;
+      align-items: flex-end;
+      right: 110px;
 
-      .project-image-div {
-        flex: 1 1 0;
-        position: relative;
-        left: 110px;
+      h3 {
+        font-weight: 400;
+        font-size: 2rem;
+      }
 
-        img {
-          height: 450px;
-          width: 750px;
-          opacity: 0.3;
-          transition: opacity 0.25s ease-in-out;
-        }
-
-        img:hover {
-          opacity: 0.8;
+      .information {
+        height: 12rem;
+        width: 675px;
+        background-color: $third-color;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        
+        p {
+          font-weight: 200;
+          font-size: 1.5rem;
+          padding: 0 1.25rem;
+          span {
+            color: $main-color;
+          }
         }
       }
 
-      .project-information-div {
-        flex: 1 1 0;
-        color: abstract.$white-color;
-        z-index: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        position: relative;
-        padding: 2.5rem 0;
-        position: relative;
-        align-items: flex-end;
-        right: 110px;
+      .tech-stack-div {
+        width: 100%;
 
-        h3 {
-          font-weight: 400;
-          font-size: 2rem;
+        .tech-stack-list {
+          display: flex;
+          justify-content: flex-end;
+
+          li {  
+            list-style: none;
+            font-weight: lighter;
+            font-size: 1.25rem;
+            padding-left: 1.25rem;
+          }
+        }
+      }
+      
+      .project-logo-div {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        right: 0;
+        justify-content: flex-end;
+
+        .svg-featured {
+          stroke: $white-color;
+          margin-left: 2rem;
+          transition: stroke 0.5s ease-in-out,
+                      transform 0.5s ease-in-out;
         }
 
-        .information {
-          height: 12rem;
-          width: 675px;
-          background-color: abstract.$third-color;
-          display: flex;
-          align-items: center;
-          text-align: center;
-          
-          p {
-            font-weight: 200;
-            font-size: 1.5rem;
-            padding: 0 1.25rem;
-            span {
-              color: abstract.$main-color;
+        .svg-featured:hover {
+          transform: scale(1.3);
+          cursor: pointer;
+          stroke: $main-color;
+        }
+      }
+    }
+  }
+
+  .projects-container {
+    display: flex;
+    flex-direction: column;
+
+    .project:nth-child(even) {
+      .project-image-div {
+          left: 675px;
+      }
+      .project-information-div {
+        right: 655px;
+        align-items: flex-start;
+
+        .tech-stack-div {
+          ul {
+            justify-content: flex-start;
+
+            li {
+              padding-right: 1.25rem;
+              padding-left: 0;
             }
           }
         }
+      }
 
+      .project-logo-div {
+        left: 0;
+        justify-content: flex-start;
+
+        .svg-featured {
+          margin-right: 2rem;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  @include between-devices('lg-laptop', 'desktop') {
+    h2 {
+      font-size: 3.5rem;
+    }
+  
+    h1 {
+      font-size: 5.5rem;
+      padding-left: 1rem;
+    }
+  
+    .project {
+      .project-image-div {
+        left: 50px;
+
+        img {
+          height: 400px;
+          width: 600px;
+        }
+      }
+  
+      .project-information-div {
+        right: 50px;
+  
+        h3 {
+          font-size: 1.75rem;
+        }
+  
+        .information {
+          height: 10rem;
+          width: 575px;
+          
+          p {
+            font-size: 1.25rem;
+          }
+        }
+  
         .tech-stack-div {
-          width: 100%;
-
           .tech-stack-list {
-            display: flex;
-            justify-content: flex-end;
-
             li {  
-              list-style: none;
-              font-weight: lighter;
-              font-size: 1.25rem;
-              padding-left: 1.25rem;
+              font-size: 1rem;
             }
           }
         }
         
         .project-logo-div {
-          position: absolute;
-          bottom: 0;
-          width: 100%;
-          display: flex;
-          right: 0;
-          justify-content: flex-end;
-
           .svg-featured {
-            stroke: abstract.$white-color;
-            margin-left: 2rem;
-            transition: stroke 0.5s ease-in-out,
-                        transform 0.5s ease-in-out;
+            width: 40px;
           }
+        }
+      }
+    }
+  
+    .projects-container {
+      .project:nth-child(even) {
+        .project-image-div {
+            left: 525px;
+        }
+        .project-information-div {
+          right: 550px;
+        }
+      }
+    }
+  }
 
-          .svg-featured:hover {
-            transform: scale(1.3);
-            cursor: pointer;
-            stroke: abstract.$main-color;
+  @include between-devices('sm-laptop', 'lg-laptop') {
+    h2 {
+      font-size: 3rem;
+    }
+
+    h1 {
+      font-size: 5rem;
+      padding-left: 2.25rem;
+    }
+
+    .project {
+      .project-image-div {
+        left: 60px;
+
+        img {
+          height: 225px;
+          width: 375px;
+        }
+      }
+
+      .project-information-div {
+        right: 60px;
+        padding-bottom: 3rem;
+
+        h3 {
+          font-weight: 400;
+          font-size: 1.25rem;
+        }
+
+        .information {
+          height: 5rem;
+          width: 350px;
+
+          p {
+            font-weight: 200;
+            font-size: 0.75rem;
+            padding: 0 1.25rem;
+          }
+        }
+
+        .tech-stack-div {
+          .tech-stack-list {
+            li {  
+              font-size: 0.7rem;
+            }
+          }
+        }
+        
+        .project-logo-div {
+          .svg-featured {
+            width: 20px;
           }
         }
       }
@@ -124,13 +280,143 @@
     .projects-container {
       display: flex;
       flex-direction: column;
+
+      .project:nth-child(even) {
+        .project-image-div {
+            left: 390px;
+        }
+        .project-information-div {
+          right: 350px;
+          align-items: flex-start;
+
+          .tech-stack-div {
+            ul {
+              justify-content: flex-start;
+
+              li {
+                padding-right: 1.25rem;
+                padding-left: 0;
+              }
+            }
+          }
+        }
+
+        .project-logo-div {
+          left: 0;
+          justify-content: flex-start;
+
+          .svg-featured {
+            margin-right: 2rem;
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+  
+  @include between-devices('tablet', 'sm-laptop') {
+    .project {  
+      .project-image-div {
+        left: 150px;
+      }
+  
+      .project-information-div {
+        .information {
+          height: 10rem;
+          width: 650px;
+
+          p {
+            font-size: 1.25rem;
+          }
+        }
+      }
+    }
+  
+    .projects-container {
+      .project:nth-child(even) {
+        .project-image-div {
+          left: 550px;
+        }
+        .project-information-div {
+          right: 600px;
+        }
+      }
+    }
+  }
+
+  @include between-devices('sm-phone', 'tablet') {
+    .project {
+      display: grid;
+      grid: 1fr / 1fr;
+      grid-gap: 0;
+      padding: 4rem;
+  
+      .project-image-div {
+        grid-area: 1 / 1 / 2 / 2;
+        left: 0;
+  
+        img {
+          height: 100%;
+          width: 100%;
+          opacity: 0.15;
+        }
+      }
+  
+      .project-information-div {
+        grid-area: 1 / 1 / 2 / 2;
+        padding: 3rem;
+        align-items: flex-start;
+        right: 0;
+  
+        h3 {
+          font-size: 2.5rem;
+        }
+  
+        .information {
+          text-align: start;
+          background-color: transparent;
+
+
+          p {
+            font-size: 1.5rem;
+            padding: 0;
+          }
+        }
+  
+        .tech-stack-div {
+          .tech-stack-list {
+            justify-content: flex-start;
+  
+            li {  
+              padding-left: 0;
+              padding-right: 1.25rem;
+            }
+          }
+        }
+        
+        .project-logo-div {
+          position: relative;
+          justify-content: flex-start;
+          margin-top: 2rem;
+  
+          .svg-featured {
+            margin-left: 0;
+            margin-right: 2rem;
+          }
+        }
+      }
+    }
+  
+    .projects-container {
+      display: flex;
+      flex-direction: column;
   
       .project:nth-child(even) {
         .project-image-div {
-            left: 675px;
+            left: 0;
         }
         .project-information-div {
-          right: 655px;
+          right: 0;
           align-items: flex-start;
   
           .tech-stack-div {
@@ -146,14 +432,13 @@
         }
   
         .project-logo-div {
-          left: 0;
           justify-content: flex-start;
-
           .svg-featured {
             margin-right: 2rem;
             margin-left: 0;
           }
         }
       }
+    }
   }
 }

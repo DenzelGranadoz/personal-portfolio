@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/components/_contact.scss';
 import arrow from '../assets/logos/arrow-to-top.svg';
 import * as Scroll from 'react-scroll';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import Socials from '../components/utils/Socials';
 
 const Contact = () => {
   const handleScroll = () => {
@@ -55,6 +56,16 @@ const Contact = () => {
     inView ? control.start('visible') : control.start('hidden');
   }, [control, inView]);
 
+  const [windowMatches, setWindowMatches] = useState(
+    window.matchMedia('(min-width: 768px)').matches
+  );
+
+  useEffect(() => {
+    window
+      .matchMedia('(min-width: 768px)')
+      .addEventListener('change', (e) => setWindowMatches(e.matches));
+  });
+
   return (
     <section className="footer-page" id="contactPage">
       <motion.div
@@ -78,6 +89,7 @@ const Contact = () => {
           <button>Say Hello</button>
         </motion.a>
       </motion.div>
+
       <motion.button
         className="back-to-top"
         onClick={handleScroll}
@@ -94,7 +106,7 @@ const Contact = () => {
         animate={control}
         initial="hidden"
       >
-        © Copyright 2022, Denzel Granadoz
+        {!windowMatches && <Socials />}© Copyright 2022, Denzel Granadoz
       </motion.footer>
     </section>
   );

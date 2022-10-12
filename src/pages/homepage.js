@@ -1,15 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import MovingText from 'react-moving-text';
 import '../styles/components/_homepage.scss';
-import {
-  LinkedIn,
-  Github,
-  Facebook,
-  Download,
-} from '../components/utils/svg/icons';
+import { Download } from '../components/utils/svg/icons';
 import resume from '../assets/resume/Granadoz_Resume.pdf';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import Socials from '../components/utils/Socials';
 
 const Homepage = () => {
   const containerVariant = {
@@ -52,40 +48,22 @@ const Homepage = () => {
     },
   };
 
-  const socialsVariant = {
-    hidden: {
-      opacity: 0,
-      x: 100,
-    },
-    hiddenOne: {
-      opacity: 0,
-      x: 100,
-    },
-    hiddenTwo: {
-      opacity: 0,
-      x: 160,
-    },
-    hiddenThree: {
-      opacity: 0,
-      x: 250,
-    },
-    visible: {
-      opacity: 1,
-      x: 0,
-
-      transition: {
-        delay: 0.5,
-        duration: 1.25,
-      },
-    },
-  };
-
   const control = useAnimation();
   const [ref, inView] = useInView();
 
   useEffect(() => {
     inView ? control.start('visible') : control.start('hidden');
   }, [control, inView]);
+
+  const [windowMatches, setWindowMatches] = useState(
+    window.matchMedia('(min-width: 768px)').matches
+  );
+
+  useEffect(() => {
+    window
+      .matchMedia('(min-width: 768px)')
+      .addEventListener('change', (e) => setWindowMatches(e.matches));
+  });
 
   return (
     <motion.section className="homepage-about-me" variants={nameVariant}>
@@ -133,55 +111,7 @@ const Homepage = () => {
         </motion.div>
       </div>
 
-      <div className="homepage-socials">
-        <div className="socials-container">
-          <motion.ul className="inner-container">
-            <li className="horizontal-line"></li>
-            <motion.li
-              variants={socialsVariant}
-              ref={ref}
-              animate={control}
-              initial="hiddenOne"
-            >
-              <a
-                href="https://www.linkedin.com/in/denzelgranadoz"
-                rel="noreferrer"
-                target="_blank"
-              >
-                <LinkedIn />
-              </a>
-            </motion.li>
-            <motion.li
-              variants={socialsVariant}
-              ref={ref}
-              animate={control}
-              initial="hiddenTwo"
-            >
-              <a
-                href="https://github.com/DenzelGranadoz"
-                rel="noreferrer"
-                target="_blank"
-              >
-                <Github />
-              </a>
-            </motion.li>
-            <motion.li
-              variants={socialsVariant}
-              ref={ref}
-              animate={control}
-              initial="hiddenThree"
-            >
-              <a
-                href="https://www.facebook.com/denzzgranadoz/"
-                rel="noreferrer"
-                target="_blank"
-              >
-                <Facebook />
-              </a>
-            </motion.li>
-          </motion.ul>
-        </div>
-      </div>
+      {windowMatches && <Socials />}
 
       <h3>
         <MovingText
