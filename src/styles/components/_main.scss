@@ -22,6 +22,18 @@
   flex-direction: column;
 }
 
+@include between-devices('md-desktop', 'lg-desktop') {
+  .content {
+    width: 40%;
+  }
+}
+
+@include between-devices('desktop', 'md-desktop') {
+  .content {
+    width: 65%;
+  }
+}
+
 @include between-devices('lg-laptop', 'desktop') {
   .homepage-container {
     height: 75vh;
@@ -33,8 +45,6 @@
     height: 70vh;
   }
 }
-
-
 
 @include between-devices('sm-phone', 'sm-laptop') {
   .main-container {
