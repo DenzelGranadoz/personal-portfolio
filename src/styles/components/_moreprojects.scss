@@ -119,6 +119,13 @@
     }
   }
 
+  @include between-devices('sm-desktop', 'md-desktop') {
+    padding: 5rem 0 5rem 5rem;
+    .more-projects-container {
+      width: 90%;
+    }
+  }
+
   @include between-devices('tablet', 'sm-laptop') {
     .more-projects-container {
       width: 90%;

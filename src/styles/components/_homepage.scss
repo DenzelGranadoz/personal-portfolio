@@ -171,7 +171,8 @@
               fill: white;
               transition: fill 0.5s ease-in-out;
           }
-        }}
+        }
+      }
   
         li:nth-child(n+2):hover {
           cursor: pointer;
@@ -205,6 +206,86 @@
     bottom: 0;
     left: 50%;
     transform: translate(-50%);
+  }
+
+  @include between-devices('md-desktop', 'lg-desktop') {  
+    .homepage-intro-button-wrapper {
+      .homepage-intro-text {
+        h1 {
+          font-size: 350px;
+          margin: 0 -1.15rem;
+          margin-bottom: -10rem;
+        }
+    
+        h2 {
+          font-size: 100px;
+          margin: -4rem 0;
+        }
+      }
+    
+      .homepage-intro-text::after {
+        width: 20rem;
+        height: 10px;
+        bottom: 20px;
+      }
+    }
+    
+    .homepage-buttons {
+      margin-top: 1.5rem;
+    
+      p {
+        font-size: 3rem;
+      }
+    
+      .buttons-wrap {
+        width: 75%;
+        margin: 1.5rem 0;
+    
+        a {
+        button {
+          font-size: 2rem;
+          padding: 1.25rem 3.5rem;
+          min-width: 23rem;
+    
+          .svg-download {
+              margin-left: 1rem;
+            }
+          }
+        }
+      }
+    }
+    
+    .homepage-socials {    
+      .socials-container {
+        padding-top: 10rem;
+    
+        .inner-container {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          height: 15%;
+          list-style: none;
+    
+          .horizontal-line::after {
+            width: 10px;
+            height: 20rem;
+            bottom: 15px;
+          }
+        }
+      }
+    }
+  
+    h3 {
+      font-size: 40px;
+    }
+  }
+
+  @include between-devices('sm-desktop', 'md-desktop') {
+    .homepage-buttons {
+      .buttons-wrap {
+        width: 55%;
+      }
+    }
   }
 
   @include between-devices('lg-laptop', 'desktop') {

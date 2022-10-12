@@ -28,7 +28,7 @@
   }
 }
 
-@include between-devices('desktop', 'md-desktop') {
+@include between-devices('sm-desktop', 'md-desktop') {
   .content {
     width: 65%;
   }

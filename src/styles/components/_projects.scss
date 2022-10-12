@@ -157,6 +157,19 @@
     }
   }
 
+  @include between-devices('sm-desktop', 'md-desktop') {
+    .projects-container {
+      .project:nth-child(even) {
+        .project-image-div {
+            left: 565px;
+        }
+        .project-information-div {
+          right: 645px;
+        }
+      }
+    }
+  }
+
   @include between-devices('lg-laptop', 'desktop') {
     h2 {
       font-size: 3.5rem;

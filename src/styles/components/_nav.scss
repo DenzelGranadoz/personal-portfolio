@@ -40,6 +40,22 @@ nav {
     }
   }
 
+  @include between-devices('md-desktop', 'lg-desktop') {
+    padding: 5rem 0;
+    
+    ul {
+      padding: 0 4rem;
+  
+      li {
+        font-size: 3rem;
+        
+        h2 {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+
   @include between-devices('lg-laptop', 'desktop') {
     padding: 3rem 4rem;
 
