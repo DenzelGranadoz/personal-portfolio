@@ -46,7 +46,7 @@
   }
 }
 
-@include between-devices('sm-phone', 'sm-laptop') {
+@include max-device('sm-laptop') {
   .main-container {
     background-image: none;
   }

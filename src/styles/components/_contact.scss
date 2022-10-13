@@ -127,7 +127,7 @@
   }
 
   @include between-devices('lg-phone', 'tablet') {
-    height: 70vh;
+    height: 80vh;
   
     .footer-content {
       h1 {
@@ -158,8 +158,8 @@
     }
   }
 
-  @include between-devices('sm-phone', 'lg-phone') {
-    height: 90vh;
+  @include max-device('lg-phone') {
+    height: 100vh;
 
     .footer-content {
       h1 {

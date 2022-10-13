@@ -447,13 +447,13 @@
         h1 {
           font-size: 200px;
           margin: 0 -0.6rem;
-          margin-bottom: -5rem;
+          margin-bottom: -3rem;
         }
     
         h2 {
           font-size: 55px;
           padding: 0;
-          margin: -1.5rem 0;
+          margin: 0.25rem 0;
         }
       }
     
@@ -489,10 +489,10 @@
     
     .homepage-socials {
       .socials-container {
-        padding-top: 1rem;
+        padding-top: 10rem;
     
         .inner-container {
-          height: 27%;
+          height: 35%;
       
           .horizontal-line::after {
             height: 12rem;
@@ -518,7 +518,7 @@
     }
   }
 
-  @include between-devices('sm-phone', 'tablet') {
+  @include max-device('tablet') {
     .homepage-intro-button-wrapper {
       padding: 0 3rem 0;
       .homepage-intro-text {

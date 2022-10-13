@@ -214,7 +214,7 @@
     }
   }
 
-    @include between-devices('sm-phone', 'tablet') {
+    @include max-device('tablet') {
     .more-projects-container {
       width: 90%;
       grid-template-columns: 1fr;

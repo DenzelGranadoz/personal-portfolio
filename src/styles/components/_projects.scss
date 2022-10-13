@@ -357,7 +357,7 @@
     }
   }
 
-  @include between-devices('sm-phone', 'tablet') {
+  @include max-device('tablet') {
     .project {
       display: grid;
       grid: 1fr / 1fr;

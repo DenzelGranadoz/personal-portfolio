@@ -261,7 +261,7 @@
     }
   }
 
-  @include between-devices('sm-phone', 'md-phone') {
+  @include max-device('md-phone') {
     h2 {
       margin-top: 4rem;
       font-size: 2.5rem;
