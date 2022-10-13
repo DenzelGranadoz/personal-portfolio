@@ -325,6 +325,82 @@
         }
       }
     }
+
+    .project {
+      padding: 4rem 0;
+  
+      .project-image-div {
+        left: 0;
+  
+        img {
+          height: 300px;
+          width: 500px;
+        }
+      }
+  
+      .project-information-div {
+        right: 125px;
+  
+        h3 {
+          font-size: 1.75rem;
+        }
+  
+        .information {
+          height: 8rem;
+          width: 550px;          
+          p {
+            font-size: 1.1rem;
+          }
+        }
+  
+        .tech-stack-div {
+          .tech-stack-list {
+            li {  
+              font-size: 1rem;
+            }
+          }
+        }
+        
+        .project-logo-div {
+          .svg-featured {
+            width: 30px;
+          }
+        }
+      }
+    }
+  
+    .projects-container {
+      .project:nth-child(even) {
+        .project-image-div {
+            left: 435px;
+        }
+        .project-information-div {
+          right: 495px;
+          align-items: flex-start;
+  
+          .tech-stack-div {
+            ul {
+              justify-content: flex-start;
+  
+              li {
+                padding-right: 1.25rem;
+                padding-left: 0;
+              }
+            }
+          }
+        }
+  
+        .project-logo-div {
+          left: 0;
+          justify-content: flex-start;
+  
+          .svg-featured {
+            margin-right: 2rem;
+            margin-left: 0;
+          }
+        }
+      }
+    }
   }
   
   @include between-devices('tablet', 'sm-laptop') {
