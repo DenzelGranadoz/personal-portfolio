@@ -46,7 +46,5 @@
   "devDependencies": {
     "gh-pages": "^4.0.0",
     "sass": "^1.55.0"
-  },
-
-  "homepage": "http://denzelgranadoz.github.io/personal-portfolio"
+  }
 }

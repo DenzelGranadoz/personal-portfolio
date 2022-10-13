@@ -327,7 +327,8 @@
 
     .homepage-socials {
       .socials-container {
-        padding-top: 10;
+        padding: 2rem 0;
+        justify-content: flex-end;
     
         .inner-container {
           height: 40%;
@@ -353,9 +354,9 @@
    h3 {
       font-size: 15px;
       padding: 1.5rem;
-      bottom: 25%;
+      bottom: 0;
       left: 50%;
-      transform: translate(-50%,-25%);
+      transform: translate(-50%);
     }
   }
 
