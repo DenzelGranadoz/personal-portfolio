@@ -4,7 +4,8 @@ import arrow from '../assets/logos/arrow-to-top.svg';
 import * as Scroll from 'react-scroll';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import Socials from '../components/utils/Socials';
+import Socials from '../components/Socials';
+import contactInfo from '../components/utils/information/ContactDetails';
 
 const Contact = () => {
   const handleScroll = () => {
@@ -66,6 +67,7 @@ const Contact = () => {
       .addEventListener('change', (e) => setWindowMatches(e.matches));
   });
 
+  const { description, title, button, footer } = contactInfo;
   return (
     <section className="footer-page" id="contactPage">
       <motion.div
@@ -75,18 +77,15 @@ const Contact = () => {
         animate={control}
         intial="hidden"
       >
-        <motion.h1 variants={itemVariant}>Get In Touch</motion.h1>
-        <motion.p variants={itemVariant}>
-          If you have an opportunity to share, or would like to discuss
-          anything, you can leave your details by clicking the button below.
-        </motion.p>
+        <motion.h1 variants={itemVariant}>{title}</motion.h1>
+        <motion.p variants={itemVariant}>{description}</motion.p>
         <motion.a
           href="mailto:zelgranadoz@gmail.com?subject=Important!"
           target="_blank"
           rel="noopener noreferrer"
           variants={itemVariant}
         >
-          <button>Say Hello</button>
+          <button>{button}</button>
         </motion.a>
       </motion.div>
 
@@ -106,7 +105,8 @@ const Contact = () => {
         animate={control}
         initial="hidden"
       >
-        {!windowMatches && <Socials />}© Copyright 2022, Denzel Granadoz
+        {!windowMatches && <Socials />}
+        {footer}
       </motion.footer>
     </section>
   );

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Github2, ExternalLink } from '../utils/svg/icons';
+import { Github2, ExternalLink } from './utils/svg/icons';
 import Parser from 'html-react-parser';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -13,20 +13,6 @@ const FeaturedItem = ({ project }) => {
   const [ref, inView] = useInView({
     threshold: 0.1,
   });
-
-  const projectVariant = {
-    hidden: {
-      opacity: 0,
-      y: 100,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-      },
-    },
-  };
 
   const containerVariant = {
     hidden: { opacity: 0 },
@@ -60,7 +46,7 @@ const FeaturedItem = ({ project }) => {
     <motion.li
       className="project"
       ref={ref}
-      variants={projectVariant}
+      variants={itemVariant}
       animate={control}
       initial="hidden"
     >

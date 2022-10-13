@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/components/_projects.scss';
-import MoreProjects from '../components/utils/MoreProjects';
-import Featured from '../components/utils/FeaturedProjects';
-import FeaturedItem from '../components/utils/FeaturedItem';
-import allProjects from '../components/utils/AllProjects';
+import MoreProjects from '../components/MoreProjects';
+import Featured from '../components/utils/information/FeaturedProjects';
+import FeaturedItem from '../components/FeaturedItem';
+import allProjects from '../components/utils/information/AllProjects';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 

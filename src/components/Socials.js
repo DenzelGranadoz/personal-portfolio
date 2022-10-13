@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { LinkedIn, Github, Facebook } from './svg/icons';
+import { LinkedIn, Github, Facebook } from './utils/svg/icons';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 

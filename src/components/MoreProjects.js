@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Github2, ExternalLink } from '../utils/svg/icons';
-import '../../styles/components/_moreprojects.scss';
+import { Github2, ExternalLink } from './utils/svg/icons';
+import '../styles/components/_moreprojects.scss';
 import Parser from 'html-react-parser';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';

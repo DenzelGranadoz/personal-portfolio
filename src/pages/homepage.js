@@ -5,7 +5,7 @@ import { Download } from '../components/utils/svg/icons';
 import resume from '../assets/resume/Granadoz_Resume.pdf';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import Socials from '../components/utils/Socials';
+import Socials from '../components/Socials';
 
 const Homepage = () => {
   const containerVariant = {

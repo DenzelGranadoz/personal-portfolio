@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/components/_about.scss';
-import about from '../components/utils/AboutMe';
+import about from '../components/utils/information/AboutMe';
 import Parser from 'html-react-parser';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 const About = () => {
   const [aboutMe, setAboutMe] = useState(about);
-  const { description, image } = aboutMe;
+  const { description, image, title } = aboutMe;
 
   const control = useAnimation();
   const [ref, inView] = useInView({
@@ -69,7 +69,7 @@ const About = () => {
         initial="hidden"
         animate={control}
       >
-        About me
+        {title}
       </motion.h2>
       <div className="about-content">
         <div className="image-text-container">
@@ -98,7 +98,7 @@ const About = () => {
           animate={control}
           initial="hidden"
         >
-          About me
+          {title}
         </motion.h1>
       </div>
     </section>

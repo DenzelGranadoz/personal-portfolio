@@ -1,6 +1,6 @@
-import shoppingCart from '../../assets/images/shopping-cart.png';
-import battleship from '../../assets/images/battleship.png';
-import weatherApp from '../../assets/images/weather-app.png';
+import shoppingCart from '../../../assets/images/shopping-cart.png';
+import battleship from '../../../assets/images/battleship.png';
+import weatherApp from '../../../assets/images/weather-app.png';
 
 const featured = [
   {

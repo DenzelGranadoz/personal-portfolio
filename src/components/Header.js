@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import '../../styles/components/_nav.scss';
+import '../styles/components/_nav.scss';
 import { motion } from 'framer-motion';
 import Links from './NavLinks';
 import { Divide as Hamburger } from 'hamburger-react';
 
 const Header = () => {
   const navVariant = {
-    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
     hidden: { opacity: 0, y: -75 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
   };
 
   const [isOpen, setOpen] = useState(false);
@@ -26,8 +26,6 @@ const Header = () => {
       .addEventListener('change', (e) => setWindowMatches(e.matches));
   }, [setOpen, windowMatches]);
 
-  // const childRef = useRef();
-
   return (
     <motion.nav variants={navVariant} animate="visible" initial="hidden">
       {windowMatches && <Links />}
@@ -36,11 +34,6 @@ const Header = () => {
         <Hamburger
           toggled={isOpen}
           toggle={setOpen}
-          // onToggle={(toggled) => {
-          //   if (!toggled) {
-          //     handleToggle();
-          //   }
-          // }}
           size={48}
           color="#E8E4C9"
           duration={0.75}
