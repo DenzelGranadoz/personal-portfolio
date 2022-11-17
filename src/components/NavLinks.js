@@ -1,13 +1,19 @@
 import React from 'react';
 import { Link } from 'react-scroll';
 
-const Links = ({ innerRef }) => {
+const Links = ({ innerRef, isOpen }) => {
   const handleReset = () => {
     window.location.reload();
   };
 
   return (
-    <ul>
+    <ul
+      style={
+        isOpen
+          ? { transform: 'translateX(0%)' }
+          : { transform: 'translateX(100%)' }
+      }
+    >
       <li>
         <h2 onClick={handleReset}>Denzel</h2>
       </li>

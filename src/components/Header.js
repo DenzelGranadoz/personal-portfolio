@@ -3,6 +3,7 @@ import '../styles/components/_nav.scss';
 import { motion } from 'framer-motion';
 import Links from './NavLinks';
 import { Divide as Hamburger } from 'hamburger-react';
+import { useInView } from 'react-intersection-observer';
 
 const Header = () => {
   const navVariant = {
@@ -13,7 +14,7 @@ const Header = () => {
   const [isOpen, setOpen] = useState(false);
 
   const [windowMatches, setWindowMatches] = useState(
-    window.matchMedia('(min-width: 768px)').matches
+    window.matchMedia('(min-width: 769px)').matches
   );
 
   useEffect(() => {
@@ -22,26 +23,37 @@ const Header = () => {
     }
 
     window
-      .matchMedia('(min-width: 768px)')
+      .matchMedia('(min-width: 769px)')
       .addEventListener('change', (e) => setWindowMatches(e.matches));
   }, [setOpen, windowMatches]);
 
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    inView ? setOpen(isOpen) : setOpen(false);
+  }, [isOpen, inView]);
+
   return (
-    <motion.nav variants={navVariant} animate="visible" initial="hidden">
-      {windowMatches && <Links />}
+    <motion.nav
+      ref={ref}
+      variants={navVariant}
+      animate="visible"
+      initial="hidden"
+    >
+      {windowMatches && <Links isOpen={!isOpen} />}
 
       {!windowMatches && (
         <Hamburger
           toggled={isOpen}
           toggle={setOpen}
-          size={48}
+          size={35}
           color="#E8E4C9"
           duration={0.75}
           label="Show menu"
         />
       )}
 
-      {isOpen && !windowMatches && <Links />}
+      {!windowMatches && <Links isOpen={isOpen} />}
     </motion.nav>
   );
 };
