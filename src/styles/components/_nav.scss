@@ -1,7 +1,7 @@
 @use '../abstract' as *;
 
 nav {
-  width: 100%;
+  width: 90%;
   padding: 3rem 6rem;
   display: flex;
   justify-content: flex-end;
@@ -40,24 +40,58 @@ nav {
     }
   }
 
-  @include between-devices('md-desktop', 'lg-desktop') {
+  @include min-device('lg-desktop') {
+    width: 40%;
     padding: 5rem 0;
     
     ul {
       padding: 0 4rem;
   
       li {
-        font-size: 3rem;
+        font-size: 3.5rem;
         
         h2 {
-          font-size: 3rem;
+          font-size: 3.5rem;
         }
       }
     }
   }
 
-  @include between-devices('lg-laptop', 'desktop') {
-    padding: 3rem 4rem;
+  @include between-devices('md-desktop', 'lg-desktop') {
+    width: 55%;
+    padding: 5rem 0;
+    
+    ul {
+      padding: 0 4rem;
+  
+      li {
+        font-size: 2.5rem;
+        
+        h2 {
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+
+  @include between-devices('lg-laptop', 'sm-desktop') {
+    padding: 2.5rem 4rem;
+    
+    ul {
+      padding: 0 8rem;
+  
+      li {
+        font-size: 1.5rem;
+        
+        h2 {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+  @include between-devices('md-laptop', 'lg-laptop') {
+    padding: 2rem 3.5rem;
 
     ul {
       padding: 0 6rem;
@@ -72,43 +106,47 @@ nav {
     }
   }
 
-  @include between-devices('sm-laptop', 'lg-laptop') {
-    padding: 3rem;
-
+  @include between-devices('sm-laptop', 'md-laptop') {
+    padding: 1.5rem 3rem;
+    width: 80%;
+    
     ul {
-      padding: 0 5rem;
+      padding: 0rem;
   
       li {
-        font-size: 1.4rem;
+        font-size: 1.25rem;
         
         h2 {
-          font-size: 1.4rem;
+          font-size: 1.25rem;
         }
       }
     }
   }
 
-  @include between-devices('tablet', 'sm-laptop') {
-    padding: 3rem 8rem;
-
+  @include between-devices('tablet-max', 'sm-laptop') {
+    padding: 2rem;
+    
     ul {
-      padding: 0 4rem;
+      padding: 0 6rem;
+  
       li {
-        font-size: 1.75rem;
+        font-size: 1.25rem;
+        
         h2 {
-          font-size: 1.75rem;
+          font-size: 1.25rem;
         }
       }
     }
   }
 
-  @include max-device('tablet') {
+  @include max-device('tablet-max') {
+    width: 100%;
     padding: 0;
     position: relative;
     z-index: 1;
 
     .hamburger-react {
-      margin: 3.5rem;
+      margin: 1.5rem 1rem;
     }
     
     ul {
@@ -117,15 +155,15 @@ nav {
       height: 100vh;
       background-color: $main-color;
       flex-direction: column;
-      justify-content: space-evenly;
-      padding: 4rem 8rem;
-      right: 0;
+      justify-content: center;
+      padding: 4rem;
+      transform: translateX(100%);
       opacity: 1;
-      animation: in 1s linear;
-
+      transition: transform 1s ease-in-out;
 
       li {
-        font-size: 2.5rem;
+        font-size: 1.25rem;
+        padding: 2rem 0;
         color: $dirty-white;
         
         h2 {
@@ -133,46 +171,5 @@ nav {
         }
       }
     }
-
-    .slide-out {
-      animation: out 1s linear;
-    }
-
-    .slide-in {
-      animation: in 1s linear;
-
-    }
-
-    @keyframes in {
-      0% {
-        right: -1000px;
-        opacity: 0;
-      }
-      50% {
-        right: -500px;
-        opacity: 0.6;
-      }
-      100% {
-        right: 0px; 
-        opacity: 1;
-      }
-    }
-    @keyframes out {
-      0% {
-        right: 0px;
-      }
-      50% {
-        right: -500px;
-      }
-      100% {
-        right: -1000px;
-      }
-    }
-
-    .hidden {
-      display: none;
-    }
   }
-
-
 }

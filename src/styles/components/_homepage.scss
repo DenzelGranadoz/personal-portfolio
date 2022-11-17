@@ -3,7 +3,7 @@
 
 .homepage-about-me {
   height: 100%;
-  width: 100%;
+  width: 80%;
   display: flex;
   position: relative;
 
@@ -208,95 +208,149 @@
     transform: translate(-50%);
   }
 
-  @include between-devices('md-desktop', 'lg-desktop') {  
-    .homepage-intro-button-wrapper {
+  @include min-device('lg-desktop') {
+    width: 45%;
+  
+    .homepage-intro-button-wrapper { 
+      padding-top: 12rem;
+
       .homepage-intro-text {
         h1 {
           font-size: 350px;
-          margin: 0 -1.15rem;
-          margin-bottom: -10rem;
+          margin: 0 -1.5rem;
+          margin-bottom: -8rem;
         }
     
         h2 {
-          font-size: 100px;
-          margin: -4rem 0;
+          font-size: 90px;
+          margin: -2rem 0;
         }
       }
     
       .homepage-intro-text::after {
-        width: 20rem;
+        width: 22rem;
         height: 10px;
-        bottom: 20px;
+        bottom: -25px;
       }
     }
     
     .homepage-buttons {
-      margin-top: 1.5rem;
+      margin-top: 5.5rem;
     
       p {
-        font-size: 3rem;
+        font-size: 2.5rem;
       }
     
       .buttons-wrap {
-        width: 75%;
-        margin: 1.5rem 0;
+        width: 100%;
+        padding-right: 23rem;
     
         a {
         button {
-          font-size: 2rem;
-          padding: 1.25rem 3.5rem;
-          min-width: 23rem;
+          font-size: 1.75rem;
+          padding: 1rem 2rem;
+          min-width: 22rem;
     
           .svg-download {
-              margin-left: 1rem;
+            margin-left: 1rem;
+            width: 40px;
+            height: 30px;
             }
           }
         }
       }
     }
     
-    .homepage-socials {    
+    .homepage-socials {
       .socials-container {
-        padding-top: 10rem;
+        padding-top: 15rem;
     
         .inner-container {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-around;
-          height: 15%;
-          list-style: none;
-    
+          height: 20%;
+
           .horizontal-line::after {
             width: 10px;
             height: 20rem;
             bottom: 15px;
+          }
+        
+    
+          li:nth-child(n+2):hover {
+            cursor: pointer;
+            animation: up 0.5s linear forwards;
+            
+            a {
+              .svg-socials {
+                fill: $main-color;
+              }
+            }
           }
         }
       }
     }
   
     h3 {
-      font-size: 40px;
+      position: absolute;
+      color: $white-color;
+      font-size: 25px;
+      font-weight: 200;
+      padding: 1.5rem;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%);
     }
   }
 
-  @include between-devices('sm-desktop', 'md-desktop') {
-    .homepage-buttons {
-      .buttons-wrap {
-        width: 55%;
+  @include between-devices('md-desktop', 'lg-desktop') {
+    width: 60%;
+
+    .homepage-intro-button-wrapper {
+      padding-top: 6rem;
+    
+      .homepage-intro-text::after {
+        width: 15rem;
+        bottom: -20px;
+        height: 8px;
+      }
+    }
+  
+    .homepage-socials {
+      .socials-container {
+        padding-top: 10rem;
+
+        .inner-container {
+          height: 20%;        
+          .horizontal-line::after {
+            width: 8px;
+            height: 13.5rem;
+          }
+        
+          li {
+            a {
+              .svg-socials {
+                width: 50px;
+              }
+            }
+          }
+        }
       }
     }
   }
 
-  @include between-devices('lg-laptop', 'desktop') {
+  @include between-devices('lg-laptop', 'sm-desktop') {
+    width: 85%;
+    
     .homepage-intro-button-wrapper {
       .homepage-intro-text {    
         h1 {
-          font-size: 225px;
+          font-size: 180px;
+          margin: 0 -0.6rem;
+          margin-bottom: -3.5rem;
         }
     
         h2 {
-          font-size: 45px;
+          font-size: 40px;
+          margin: -0.25rem 0;
         }
       }
     
@@ -310,16 +364,21 @@
       margin-top: 3rem;
     
       p {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
       }
     
       .buttons-wrap {
-        width: 55%;
+        width: 50%;
         margin: 1.25rem 0;
     
         a {
           button {
-            min-width: 13rem;
+            padding: 0.5rem 1rem;
+            font-size: 0.75rem;
+            min-width: 11rem;
+          }
+          svg {
+            width: 10px;
           }
         }
       }
@@ -327,23 +386,23 @@
 
     .homepage-socials {
       .socials-container {
-        padding: 2rem 0;
-        justify-content: flex-end;
+        padding-top: 3rem;
+        justify-content: center;
     
         .inner-container {
-          height: 40%;
+          height: 25%;
 
           .horizontal-line::after {
             width: 5px;
-            height: 11rem;
+            height: 8.5rem;
             bottom: 12px;
           }
         
           li {
             a {
               .svg-socials {
-                width: 30px;
-                height: 30px;
+                width: 25px;
+                height: 25px;
               }
             }
           }
@@ -360,150 +419,241 @@
     }
   }
 
-  @include between-devices('sm-laptop', 'lg-laptop') {
+  @include between-devices('md-laptop', 'lg-laptop') {
+    width: 85%;
+  
     .homepage-intro-button-wrapper {
-      .homepage-intro-text {    
+      padding-top: 1rem;
+      .homepage-intro-text {
         h1 {
-          font-size: 200px;
-          margin-bottom: -3.5rem;
+          font-size: 190px;
+          margin: 0 -0.75rem;
+          margin-bottom: -4rem;
         }
     
         h2 {
           font-size: 40px;
-          margin: 0.1rem 0;
+          padding: 0;
+          margin: -0.25rem 0;
         }
       }
-      
     
       .homepage-intro-text::after {
-        width: 8rem;
-        bottom: -25px;
+        width: 11rem;
+        bottom: -30px;
       }
     }
     
     .homepage-buttons {
+      margin-top: 3.5rem;
+    
       p {
         font-size: 1.25rem;
       }
     
-      
       .buttons-wrap {
-        width: 60%;
-        margin: 1.25rem 0;
-
+        width: 100%;
+        padding-right: 20rem;
+    
         a {
-          button {
+        button {
           font-size: 0.8rem;
-          padding: 0.6rem 1.3rem;
+          padding: 0.5rem 1.25rem;
           min-width: 12rem;
-
+    
           .svg-download {
             margin-left: 0.5rem;
+            width: 15px;
+            height: 15px;
+            }
           }
         }
       }
     }
-
-      
-    }
-
+    
     .homepage-socials {
       .socials-container {
-        padding-top: 18rem;
+        padding-top: 7.5rem;
     
         .inner-container {
-          height: 60%;
-          justify-content: space-evenly;
-
+          height: 30%;
+    
+          .horizontal-line {
+            position: relative;
+          }
+        
           .horizontal-line::after {
-            width: 5px;
-            height: 10rem;
-            bottom: 12px;
+            height: 11rem;
+            bottom: 15px;
           }
         
           li {
             a {
               .svg-socials {
                 width: 30px;
-                height: 30px;
               }
             }
           }
         }
       }
     }
-
-   h3 {
+  
+    h3 {
       font-size: 15px;
-      padding: 1.5rem;
-      bottom: 0;
-      left: 50%;
-      transform: translate(-50%);
     }
   }
-  @include between-devices('tablet', 'sm-laptop') {
-    padding: 0 8rem;
+
+  @include between-devices('sm-laptop', 'md-laptop') {
+    width: 80%;
     .homepage-intro-button-wrapper {
-      .homepage-intro-text {
+      padding-top: 2rem;
+
+      .homepage-intro-text {    
         h1 {
-          font-size: 200px;
-          margin: 0 -0.6rem;
+          font-size: 150px;
+          margin: 0 -0.5rem;
           margin-bottom: -3rem;
         }
     
         h2 {
-          font-size: 55px;
-          padding: 0;
-          margin: 0.25rem 0;
+          font-size: 35px;
+          margin: 0rem;
         }
       }
     
       .homepage-intro-text::after {
-        width: 10rem;
-        bottom: -5px;
+        width: 9rem;
+        bottom: -20px;
       }
     }
     
     .homepage-buttons {
-      margin-top: 2rem;
+      margin-top: 2.5rem;
     
       p {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
       }
     
       .buttons-wrap {
-        width: 58%;
+        width: 100%;
+        margin-top: 1rem;
+        padding-right: 12rem;
     
         a {
         button {
-          font-size: 1rem;
-          padding: 0.75rem 1.5rem;
-          min-width: 14rem;
+          font-size: 0.75rem;
+          padding: 0.5rem 2rem;
+          min-width: 10rem;
     
           .svg-download {
-            margin-left: 0.5rem;
+            width: 15px;
+            height: 10px;
+            }
           }
         }
-      }
       }
     }
     
     .homepage-socials {
       .socials-container {
         padding-top: 10rem;
-    
+
         .inner-container {
-          height: 35%;
-      
+          height: 30%;        
           .horizontal-line::after {
-            height: 12rem;
-            bottom: 0;
+            width: 5px;
+            height: 9rem;
           }
         
           li {
             a {
               .svg-socials {
-                width: 40px;
+                width: 25px;
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    h3 {
+      font-size: 10px;
+    }
+  }
+  @include between-devices('tablet', 'sm-laptop') {
+    width: 100%;
+    padding: 0 5rem;
+
+    .homepage-intro-button-wrapper {
+      .homepage-intro-text {
+        h1 {
+          font-size: 150px;
+          margin: 0 -0.5rem;
+          margin-bottom: -4rem;
+        }
+    
+        h2 {
+          font-size: 35px;
+          padding: 0;
+          margin: -1rem 0;
+        }
+      }
+    
+      .homepage-intro-text::after {
+        width: 8rem;
+        bottom: -10px;
+        height: 4px;
+      }
+    }
+    
+    .homepage-buttons {
+      margin-top: 3rem;
+    
+      p {
+        font-size: 1.1rem;
+      }
+    
+      .buttons-wrap {
+        width: 100%;
+        margin: 2rem 0;
+        padding-right: 5rem;
+
+        a {
+        button {
+          font-size: 0.75rem;
+          padding: 0.5rem 1.25rem;
+          min-width: 10rem;
+          border-radius: 5px;
+    
+          .svg-download {
+            width: 15px;
+            height: 15px;
+            margin-left: 0.5rem;
+          }
+        }
+      }
+      }
+    }
+    
+    .homepage-socials {
+      padding-bottom: 1rem;
+      .socials-container {
+        padding-top: 5rem;
+    
+        .inner-container {
+          height: 25%;
+          justify-content: space-around;
+      
+          .horizontal-line::after {
+            height: 12rem;
+            width: 4px;
+            bottom: 12px;
+          }
+        
+          li {
+            a {
+              .svg-socials {
+                width: 25px;
               }
             }
           }
@@ -519,70 +669,188 @@
     }
   }
 
-  @include max-device('tablet') {
+  @include between-devices('lg-phone', 'tablet') {
+    width: 100%;
+
     .homepage-intro-button-wrapper {
-      padding: 0 3rem 0;
+      padding: 0 3rem;
+
       .homepage-intro-text {
         h1 {
-          font-size: 150px;
-          margin: 0 -0.4rem;
-          margin-bottom: -3rem;
+          font-size: 100px;
+          margin: 0 -0.3rem;
+          margin-bottom: -5rem;
         }
     
         h2 {
-          font-size: 40px;
+          font-size: 25px;
+          margin: -3rem 0;
+
         }
       }
     
       .homepage-intro-text::after {
-        width: 8rem;
-        bottom: -20px;
+        width: 6rem;
+        bottom: 30px;
+        height: 4px;
+        
       }
     }
     
     .homepage-buttons {
-      margin-top: 2.5rem;
+      margin-top: -0.1rem;
     
       p {
-        font-size: 1.25rem;
+        font-size: 0.75rem;
       }
     
       .buttons-wrap {
-        width: 48%;
-        margin: 1.5rem 0;
+        width: 100%;
+        margin: 1.25rem 0;
+        padding-right: 6rem;
     
         a {
         button {
-          font-size: 0.8rem;
-          padding: 0.5rem 0.75rem;
-          min-width: 11rem;
-          text-align: center;
-          border-radius: 10px;
-          border: none;
-          background-color: $secondary-color;
-          color: $white-color;
-          transition: transform 0.5s ease-in;
+          font-size: 0.5rem;
+          padding: 0.25rem 0.5rem;
+          min-width: 7rem;
+          border-radius: 4px;
+
     
           .svg-download {
+            width: 10px;
+            height: 10px;
             margin-left: 0.25rem;
           }
         }
       }
-    
-        button:hover {
-          color: $main-color;
-          cursor: pointer;
-          transform: scale(1.1);
-    
-          .svg-download {
-            fill: $main-color;
-          }
-        }
       }
     
     }
     h3 {
-      font-size: 1rem;
+      font-size: 0.5rem;
+    }
+  }
+
+  @include between-devices('md-phone', 'lg-phone') {
+    width: 100%;
+
+    .homepage-intro-button-wrapper {
+      padding: 0 2rem;
+
+      .homepage-intro-text {
+        h1 {
+          font-size: 90px;
+          margin: 0 -0.3rem;
+          margin-bottom: -6rem;
+        }
+    
+        h2 {
+          font-size: 20px;
+          margin: -4rem 0;
+
+        }
+      }
+    
+      .homepage-intro-text::after {
+        width: 5rem;
+        bottom: 50px;
+        height: 3px;
+      }
+    }
+    
+    .homepage-buttons {
+      margin-top: -1.5rem;
+    
+      p {
+        font-size: 0.75rem;
+      }
+    
+      .buttons-wrap {
+        width: 100%;
+        margin: 1.25rem 0;
+        padding-right: 6rem;
+  
+        a {
+        button {
+          font-size: 0.5rem;
+          padding: 0.25rem 0.5rem;
+          min-width: 7rem;
+          border-radius: 4px;
+
+    
+          .svg-download {
+            width: 10px;
+            height: 10px;
+            margin-left: 0.25rem;
+            }
+          }
+        }
+      }
+    }
+    h3 {
+      font-size: 0.5rem;
+    }
+  }
+
+  @include max-device('md-phone') {
+    width: 100%;
+
+    .homepage-intro-button-wrapper {
+      padding: 0 2rem;
+
+      .homepage-intro-text {
+        h1 {
+          font-size: 90px;
+          margin: 0 -0.3rem;
+          margin-bottom: -6rem;
+        }
+    
+        h2 {
+          font-size: 20px;
+          margin: -4rem 0;
+
+        }
+      }
+    
+      .homepage-intro-text::after {
+        width: 5rem;
+        bottom: 50px;
+        height: 3px;
+      }
+    }
+    
+    .homepage-buttons {
+      margin-top: -1.5rem;
+    
+      p {
+        font-size: 0.75rem;
+      }
+    
+      .buttons-wrap {
+        width: 100%;
+        margin: 1.25rem 0;
+        padding-right: 2rem;
+  
+        a {
+        button {
+          font-size: 0.5rem;
+          padding: 0.25rem 0.5rem;
+          min-width: 6.5rem;
+          border-radius: 4px;
+
+    
+          .svg-download {
+            width: 10px;
+            height: 10px;
+            margin-left: 0.25rem;
+            }
+          }
+        }
+      }
+    }
+    h3 {
+      font-size: 0.5rem;
     }
   }
 }

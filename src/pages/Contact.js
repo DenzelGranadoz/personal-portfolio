@@ -58,12 +58,12 @@ const Contact = () => {
   }, [control, inView]);
 
   const [windowMatches, setWindowMatches] = useState(
-    window.matchMedia('(min-width: 768px)').matches
+    window.matchMedia('(min-width: 769px)').matches
   );
 
   useEffect(() => {
     window
-      .matchMedia('(min-width: 768px)')
+      .matchMedia('(min-width: 769px)')
       .addEventListener('change', (e) => setWindowMatches(e.matches));
   });
 

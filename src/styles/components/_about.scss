@@ -2,7 +2,7 @@
 
 .about-container {
   height: 100vh;
-  width: 100%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,39 +59,70 @@
     }
   }
 
-  @include between-devices('md-desktop', 'lg-desktop') {
-    height: 100vh;
-    width: 100%;
+  @include min-device('lg-desktop') {
+    width: 50%;
+    
     h2 {
       font-size: 8rem;
+      padding-top: 5rem;
     }
   
     .about-content {
-      padding-bottom: 40rem;
-      height: 55vh;
+      padding-bottom: 4rem;
+      height: 80vh;
     
       .image-text-container {
         img {
-          height: 650px;
-          width: 600px;
-          border:4px solid #00ADB5;
-          border-radius: 10px;
+          height: 700px;
+          width: 700px;
         }
       }
     
       .about-text-container {
-        flex: 2 1 0;
-    
         p {
           font-size: 3rem;
-          padding: 0 1rem;
+          padding: 1 0.5rem;
         }
       }
     
       h1 {
-        bottom: 350px;
-        left: -300px;
+        bottom: 325px;
+        left: -450px;
         font-size: 300px;
+      }
+    }
+  }
+
+  @include between-devices('md-desktop', 'lg-desktop') {
+    width: 70%;
+    
+    h2 {
+      font-size: 5rem;
+      padding-top: 5rem;
+    }
+  
+    .about-content {
+      padding-bottom: 4rem;
+      height: 80vh;
+    
+      .image-text-container {
+        img {
+          height: 600px;
+          width: 600px;
+        }
+      }
+    
+      .about-text-container {
+        p {
+          font-size: 2.5rem;
+          padding: 0 0.5rem;
+        }
+      }
+    
+      h1 {
+        bottom: 125px;
+        left: -450px;
+        font-size: 240px;
       }
     }
   }
@@ -103,48 +134,17 @@
     }
   }
 
-  @include between-devices('lg-laptop', 'desktop') {
+  @include between-devices('lg-laptop', 'sm-desktop') {
     h2 {
       font-size: 2.75rem;
+      padding-top: 2rem;
     }
   
     .about-content {
-      height: 70vh;
+      height: 60vh;
 
       .image-text-container {
         margin-left: 3rem;
-        img {
-          height: 450px;
-          width: 450px;
-        }
-      }
-    
-      .about-text-container {
-        p {
-          font-size: 1.75rem;
-          padding: 0 3rem;
-        }
-      }
-    
-      h1 {
-        left: -220px;
-        font-size: 210px;
-      }
-    }
-  }
-
-  @include between-devices('sm-laptop', 'lg-laptop') {
-    h2 {
-      font-size: 2.5rem;
-    }
-  
-    .about-content {
-      padding-bottom: 1rem;
-      height: 60vh;
-    
-      .image-text-container {
-        margin-left: 2rem;
-      
         img {
           height: 400px;
           width: 400px;
@@ -154,29 +154,30 @@
       .about-text-container {
         p {
           font-size: 1.5rem;
-          padding: 0 2rem;
+          padding: 0 3rem;
         }
       }
     
       h1 {
-        left: -200px;
+        left: -220px;
+        top: 250px;
         font-size: 190px;
       }
     }
   }
 
-  @include between-devices('tablet', 'sm-laptop') {
+  @include between-devices('md-laptop', 'lg-laptop') {
+    width: 90%;
+  
     h2 {
-      font-size: 3.5rem;
+      font-size: 4rem;
     }
   
     .about-content {
-      padding: 0 3rem;
-      padding-bottom: 6rem;
+      padding-bottom: 4rem;
       height: 70vh;
     
       .image-text-container {
-      
         img {
           height: 425px;
           width: 425px;
@@ -185,29 +186,31 @@
     
       .about-text-container {    
         p {
-          font-size: 1.75rem;
+          font-size: 1.6rem;
         }
       }
     
       h1 {
-        left: -75px;
-        font-size: 200px;
+        position: absolute;
+        bottom: -20px;
+        left: -130px;
+        font-size: 175px;
       }
     }
   }
 
-  @include between-devices('lg-phone', 'tablet') {  
+  @include between-devices('sm-laptop', 'md-laptop') {
+    width: 90%;
+
     h2 {
-      margin-top: 6rem;
-      font-size: 3rem;
+      font-size: 2.5rem;
     }
-
+  
     .about-content {
-      flex-direction: column-reverse;
-      padding: 0 2rem;
-      height: 100%;
-
-      .image-text-container {
+      padding-bottom: 4rem;
+      height: 60vh;
+    
+      .image-text-container {        
         img {
           height: 350px;
           width: 350px;
@@ -217,26 +220,30 @@
       .about-text-container {
         p {
           font-size: 1.25rem;
-          padding: 1rem;
         }
       }
-      
+    
       h1 {
-        top: 250px;
-        left: -75px;
-        font-size: 150px;
+        position: absolute;
+        bottom: -50px;
+        left: -100px;
+        font-size: 125px;
       }
     }
   }
 
-  @include between-devices('md-phone', 'lg-phone') {
-    h2 {
-      margin-top: 6rem;
-      font-size: 4rem;
-    }
+  @include between-devices('tablet', 'sm-laptop') {
+    width: 100%;
 
+    h2 {
+      margin-top: 2rem;
+      font-size: 4rem;
+      line-height: 2;
+    }
+  
     .about-content {
       flex-direction: column-reverse;
+      padding: 0 1.5rem 1.5rem;
       height: 100%;
     
       .image-text-container {
@@ -246,49 +253,123 @@
         }
       }
     
-      .about-text-container {  
+      .about-text-container {    
         p {
           font-size: 1.5rem;
-          padding: 2rem;
+          padding: 0;
         }
       }
     
       h1 {
-        top: 200px;
+        top: 265px;
         left: -50px;
-        font-size: 150px;
+        font-size: 125px;
       }
     }
   }
 
-  @include max-device('md-phone') {
+  @include between-devices('lg-phone', 'tablet') {  
+    width: 100%;
+
     h2 {
-      margin-top: 4rem;
+      margin-top: 5rem;
       font-size: 2.5rem;
     }
 
     .about-content {
       flex-direction: column-reverse;
+      padding: 0 2rem 1.5rem;
+      height: 100%;
+
+      .image-text-container {
+        img {
+          height: 300px;
+          width: 300px;
+        }
+      }
+    
+      .about-text-container {
+        p {
+          font-size: 1rem;
+          padding: 0;
+        }
+      }
+      
+      h1 {
+        top: 370px;
+        left: -30px;
+        font-size: 75px;
+      }
+    }
+  }
+
+  @include between-devices('md-phone', 'lg-phone') {
+    width: 100%;
+
+    h2 {
+      margin-top: 4rem;
+      font-size: 2rem;
+    }
+
+    .about-content {
+      flex-direction: column-reverse;
+      padding: 0 1.25rem 1.5rem;
       height: 100%;
     
       .image-text-container {
         img {
-          height: 325px;
-          width: 325px;
+          height: 275px;
+          width: 275px;
         }
       }
     
       .about-text-container {  
         p {
-          font-size: 1.5rem;
+          font-size: 1rem;
+          padding: 0;
+        }
+      }
+    
+      h1 {
+        top: 325px;
+        left: -30px;
+        font-size: 75px;
+      }
+    }
+  }
+
+  @include max-device('md-phone') {
+    width: 100%;
+
+    h2 {
+      margin-top: 6rem;
+      font-size: 1.75rem;
+    }
+
+    .about-content {
+      flex-direction: column-reverse;
+      height: 100%;
+      padding: 0 0.75rem 0.25rem;
+
+    
+      .image-text-container {
+        img {
+          height: 250px;
+          width: 250px;
+        }
+      }
+    
+      .about-text-container {  
+        p {
+          font-size: 0.75rem;
           padding: 1.5rem;
         }
       }
     
       h1 {
         top: 275px;
-        left: -40px;
-        font-size: 150px;
+        left: -20px;
+        font-size: 50px;
       }
     }
   }

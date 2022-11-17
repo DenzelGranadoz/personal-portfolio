@@ -5,14 +5,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url('../../assets/images/homepage-bg.jpg');
-  background-repeat: no-repeat;
-  background-size: contain;
   background-color: $secondary-color;
+  overflow: hidden;
 }
 
 .content {
-  width: 80%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .homepage-container {
@@ -20,39 +22,17 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-}
-
-@include between-devices('md-desktop', 'lg-desktop') {
-  .content {
-    width: 40%;
-  }
-}
-
-@include between-devices('sm-desktop', 'md-desktop') {
-  .content {
-    width: 65%;
-  }
-}
-
-@include between-devices('lg-laptop', 'desktop') {
-  .homepage-container {
-    height: 75vh;
-  }
-}
-
-@include between-devices('sm-laptop', 'lg-laptop') {
-  .homepage-container {
-    height: 70vh;
-  }
+  align-items: center;
+  background-image: url('../../assets/images/homepage-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 @include max-device('sm-laptop') {
   .main-container {
     background-image: none;
   }
-  .content {
-    width: 100%;
-  }
+
   .homepage-container {
     background-image: url('../../assets/images/homepage-bg-vertical.png');
     background-repeat: no-repeat;

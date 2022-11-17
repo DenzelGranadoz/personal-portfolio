@@ -9,10 +9,10 @@ import Contact from '../pages/Contact';
 const Main = () => {
   return (
     <div className="content">
-      <div className="homepage-container">
+      <section className="homepage-container">
         <Header />
         <Homepage />
-      </div>
+      </section>
       <About />
       <Projects />
       <Contact />
