@@ -6,6 +6,7 @@ import resume from '../assets/resume/Granadoz_Resume.pdf';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Socials from '../components/Socials';
+import homeInfo from '../components/utils/information/HomePage';
 
 const Homepage = () => {
   const containerVariant = {
@@ -65,6 +66,17 @@ const Homepage = () => {
       .addEventListener('change', (e) => setWindowMatches(e.matches));
   });
 
+  const {
+    header1,
+    header2,
+    firstName,
+    lastName,
+    occupation,
+    download,
+    cta,
+    movingText,
+  } = homeInfo;
+
   return (
     <motion.section className="homepage-about-me" variants={nameVariant}>
       <div className="homepage-intro-button-wrapper">
@@ -75,10 +87,10 @@ const Homepage = () => {
           animate={control}
           initial="hidden"
         >
-          <motion.h1 variants={nameVariant}>HELLO</motion.h1>
-          <motion.h2 variants={nameVariant}>I'm</motion.h2>
+          <motion.h1 variants={nameVariant}>{header1}</motion.h1>
+          <motion.h2 variants={nameVariant}>{header2}</motion.h2>
           <motion.h2 variants={nameVariant}>
-            Denzel <span className="main-color-text">Granadoz</span>
+            {firstName} <span className="main-color-text">{lastName}</span>
           </motion.h2>
         </motion.div>
 
@@ -93,11 +105,11 @@ const Homepage = () => {
             className="horizontal-line"
             variants={buttonsVariant}
           ></motion.div>
-          <motion.p variants={buttonsVariant}>Front-End Web Developer</motion.p>
+          <motion.p variants={buttonsVariant}>{occupation}</motion.p>
           <motion.div className="buttons-wrap" variants={buttonsVariant}>
             <a className="" href={resume} download="Granadoz_Resume.pdf">
               <button>
-                RESUME <Download />
+                {download} <Download />
               </button>
             </a>
             <a
@@ -105,7 +117,7 @@ const Homepage = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button>CONTACT ME</button>
+              <button>{cta}</button>
             </a>
           </motion.div>
         </motion.div>
@@ -123,7 +135,7 @@ const Homepage = () => {
           iteration="infinite"
           fillMode="none"
         >
-          Scroll Down
+          {movingText}
         </MovingText>
       </h3>
     </motion.section>
